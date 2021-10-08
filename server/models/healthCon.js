@@ -17,6 +17,10 @@ const healthConditionSchema = mongoose.Schema({
         type : String,
         required : true
     },
+    credit : {
+        type : String,
+        required : true
+    },
     createdAt : {
         type : Date,
         default : Date.now

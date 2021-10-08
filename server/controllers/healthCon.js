@@ -14,8 +14,30 @@ let healthyController = {
                 message : error.message
             })
         }
-
-
+    },
+    createData : async (req,res) => {
+        try {
+            const {judul,pengertian,ciri,credit,penanggulangan} = await req.body
+            const payload = await {
+                judul : judul,
+                pengertian : pengertian,
+                ciri : ciri,
+                credit : credit,
+                penanggulangan : penanggulangan
+            }
+    
+            const newPost = await Healthy.create(payload)
+    
+            res.status(201).json({
+                message : "user created",
+                data : payload
+            })
+    
+        } catch (error) {
+            res.json({
+                message : error.message
+            })
+        }
     }
 }
 
