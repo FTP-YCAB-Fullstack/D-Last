@@ -30,6 +30,7 @@ let userController = {
                 return res.status(400).json({
                     message: "Tolong isi semua data"
                 })
+
             if(password.length < 8)
                 return res.status(400).json({
                     message: "Panjang minimal password 8!"
@@ -88,25 +89,15 @@ let userController = {
                 role: user.role,
                 username: user.nama
             }
-            const token = jwt.sign( payload,process.env.JWT_SECRET)
-            res.cookie("token", token, { httpOnly: true}).send
+            const accesstoken = jwt.sign( payload,process.env.JWT_SECRET)
             res.status(200).json({
                 message: "Login Sukses!",
-                token: token,
+                accesstoken: accesstoken,
                 data: payload
             })
         } catch (error) {
             
         }
-    },
-    logout: async (req, res, next) => {
-        res.cookie("token", "", {
-            httpOnly: true,
-            expires: new Date(0),
-        }).send
-        res.status(200).json({
-            message: "logout sukses"
-        })
     }
 }
 
