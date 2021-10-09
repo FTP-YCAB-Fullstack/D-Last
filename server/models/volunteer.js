@@ -39,4 +39,4 @@ const volunteerSchema = mongoose.Schema({
     }
 },)
 
-module.exports = mongoose.model("stories",storiesSchema)
+module.exports = mongoose.model("volunteer",volunteerSchema)
