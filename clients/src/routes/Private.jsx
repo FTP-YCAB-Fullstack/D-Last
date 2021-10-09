@@ -2,10 +2,10 @@ import React from 'react'
 import {Route, Redirect} from 'react-router-dom'
 
 const Private = props => {
-    const auth = localStorage.getItem('auth');
+    const token = localStorage.getItem('token');
 
     return (
-        auth ? <Route exact path={props.path} component={props.component} /> : <Redirect to="/login"/> 
+        token ? <Route exact path={props.path} component={props.component} /> : <Redirect to="/login"/> 
     )
 }
 

@@ -17,8 +17,9 @@ function Login() {
         let login = await axios.post("http://localhost:5000/login",data)
         localStorage.setItem('token', login.data.accesstoken)
         
-        console.log(login.data)
-        console.log(localStorage.getItem('token'))
+        console.log(login.data.data.role)
+
+        // console.log(localStorage.getItem('token'))
 
     }
 
