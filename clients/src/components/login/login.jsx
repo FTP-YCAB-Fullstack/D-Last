@@ -14,9 +14,11 @@ function Login() {
             password
         }
 
-        let health = await axios.post("http://localhost:5000/login",data)
-
-        console.log(health.data)
+        let login = await axios.post("http://localhost:5000/login",data)
+        localStorage.setItem('token', login.data.accesstoken)
+        
+        console.log(login.data)
+        console.log(localStorage.getItem('token'))
 
     }
 
