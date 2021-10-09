@@ -16,8 +16,8 @@ function Login() {
 
         let health = await axios.post("http://localhost:5000/login",data)
 
-        console.log(health)
-        
+        console.log(health.data)
+
     }
 
 
@@ -33,7 +33,7 @@ function Login() {
                     <label>password</label>
                     <input type="password" placeholder="type your password here" onChange={(e)=>setPassword(e.target.value)}/>
                 </div>
-                <input type="button" value="LOGIN" />
+                <input type="submit" value="LOGIN" />
                 <Link to="/register">Sign Up</Link>
             </form>
         </div>
