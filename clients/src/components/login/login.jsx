@@ -1,11 +1,15 @@
 import React, { useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import axios from "axios"
+import { useDispatch, useSelector } from 'react-redux'
 
 function Login() {
     const history = useHistory()
     const [email,setEmail] = useState("")
     const [password,setPassword] = useState("")
+
+    const authAs = useSelector(state => state.authAs)
+    const dispatch = useDispatch()
 
     const submited = async (e) => {
         e.preventDefault()
@@ -18,7 +22,12 @@ function Login() {
         localStorage.setItem('token', login.data.accesstoken)
         
         console.log(login.data.data.role)
-
+        await dispatch({
+            type : "AUTHING",
+            payload : {
+                authAs : login.data.data.role
+            }
+        })
         // console.log(localStorage.getItem('token'))
 
     }
