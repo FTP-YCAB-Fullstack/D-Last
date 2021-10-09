@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import axios from "axios"
+import { useHistory } from 'react-router-dom'
 
 function Register() {
+    const history = useHistory()
     const [nama,setNama] = useState("")
     const [email,setEmail] = useState("")
     const [password,setPassword] = useState("")
@@ -23,6 +25,7 @@ function Register() {
         let health = await axios.post("http://localhost:5000/register",data)
 
         console.log(health)
+        history.push('/login')
     }
 
     return (
