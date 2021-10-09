@@ -27,20 +27,14 @@ let userController = {
                 role : "user"
             }
             if (!nama || !email || !password)
-                return res.status(400).json({
-                    message: "Tolong isi semua data"
-                })
+                return next({code:406,message:"Tidak boleh ada form yang kosong!"})
 
             if(password.length < 8)
-                return res.status(400).json({
-                    message: "Panjang minimal password 8!"
-                })
+                return next({code:411,message:"Panjang password minimal 8 karakter!"})
 
             const existingUser = await User.findOne({email})
             if (existingUser)
-                return res.status(400).json({
-                    message: "Maaf, Email anda sudah terdaftar"
-                })
+                return next({code:409,message:"Email yang anda masukan sudah terdaftar"})
             
             // const newUser = new User ({
             //     nama,
@@ -58,30 +52,22 @@ let userController = {
     
     
         } catch (error) {
-            res.json({
-                message : error.message
-            })
+            next({code:500,message:error.message})
         }
     },
     login : async (req, res, next) => {
         try {
             const {email, password} = req.body
             if (!email || !password)
-            return res.status(400).json({
-                message: "Input tidak boleh kosong"
-            })
+            return next({code:406,message:"Tidak boleh ada form yang kosong!"})
             //check user
             const user = await User.findOne({email})
             if(!user){
-                return res.status(401).json({
-                    message: "Maaf, Email/Password Salah"
-                })
+                return next({code:406,message:"Email / Password Invalid"})
             }
             let check = await bcrypt.compare(password, user.password)
             if(!check){
-                return res.status(401).json({
-                    message: "Maaf, Email/Password Salah"
-                })
+                return next({code:406,message:"Email / Password Invalid"})
             }
             //create token
             const payload = {
@@ -96,7 +82,7 @@ let userController = {
                 data: payload
             })
         } catch (error) {
-            
+            next({code:500,message:error.message})
         }
     }
 }
