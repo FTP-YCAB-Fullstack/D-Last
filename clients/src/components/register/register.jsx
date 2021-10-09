@@ -20,8 +20,7 @@ function Register() {
             password
         }
 
-        let health = await axios.get("http://localhost:5000/health-conditions")
-        health = health.data.data
+        let health = await axios.post("http://localhost:5000/register",data)
 
         console.log(health)
     }
