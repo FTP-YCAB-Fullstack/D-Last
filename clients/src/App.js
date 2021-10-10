@@ -3,6 +3,7 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import AdminPage from "./pages/AdminPage";
 import HomePage from "./pages/HomePage";
 import HospitalPage from "./pages/HospitalPage";
 import LoginPage from './pages/LoginPage';
@@ -18,10 +19,11 @@ function App() {
       <Switch>
         <Route path="/login" exact component={LoginPage}/>
         <Route path="/register" exact component={RegisterPage}/>
-        <Route path='/cerita' exact component={CeritaPage}/>
+        <Private path='/cerita' exact component={CeritaPage}/>
         <Route path='/rumah-sakit' exact component={HospitalPage}/>
-        <Route path='/volunteer' exact component={VolunteerPage}/>
-        <Private path="/home" exact component={HomePage} />
+        <Private path='/volunteer' exact component={VolunteerPage}/>
+        <Route path="/" exact component={HomePage} />
+        <Private path="/admin" exact component={AdminPage} />
       </Switch>
     </Router>
     </>
