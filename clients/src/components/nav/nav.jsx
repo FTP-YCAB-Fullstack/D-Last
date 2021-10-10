@@ -3,7 +3,7 @@ import {Nav, NavLink, Bars, Menu, NavBtn, BtnLink} from './navbarStyle'
 import { useDispatch, useSelector } from 'react-redux'
 
 function NavBar () {
-
+    const [isOpen, setIsOpen] = useState(false)
     const logAs = useSelector(state => state.logAs)
     const isLogin = useSelector(state => state.isLogin)
     const dispatch = useDispatch()
@@ -23,8 +23,9 @@ function NavBar () {
                         Keluar
                     </NavBtn>
                 </NavLink>
-                <Bars/>
-                <Menu>
+                <Bars onClick={() => setIsOpen(!isOpen)}>
+                </Bars>
+                <Menu isOpen={isOpen}>
                     <NavLink to='/home'activeStyle >
                         home
                     </NavLink>

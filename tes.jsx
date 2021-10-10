@@ -1,32 +1,95 @@
-<nav id="header" class="w-full z-30 py-1 bg-white shadow-lg border-b border-blue-400 mt-5">
-<div class="w-full flex items-center justify-between mt-0 px-6 py-2">
-   <label for="menu-toggle" class="cursor-pointer md:hidden block">
-   <svg class="fill-current text-blue-600" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
-       <title>menu</title>
-       <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-    </svg>
-   </label>
-   <input class="hidden" type="checkbox" id="menu-toggle"/>
-   
-   <div class="hidden md:flex md:items-center md:w-auto w-full order-3 md:order-1" id="menu">
-      <nav>
-         <ul class="md:flex items-center justify-between text-base text-blue-600 pt-4 md:pt-0">
-            <li><Link to='/home' class="inline-block no-underline hover:text-black font-medium text-md py-2 px-4 md:-ml-2" >Home</Link></li>
-            <li><a class="inline-block no-underline hover:text-black font-medium text-md py-2 px-4 md:-ml-2" href="#">Service</a></li>
-            <li><a class="inline-block no-underline hover:text-black font-medium text-md py-2 px-4 md:-ml-2" href="#">Kondisi Kesehatan</a></li>
-            <li><Link to='/rumah-sakit' class="inline-block no-underline hover:text-black font-medium text-md py-2 px-4 md:-ml-2" >Rumah Sakit</Link></li>
-            <li><Link to='/cerita' class="inline-block no-underline hover:text-black font-medium text-md py-2 px-4 md:-ml-2" >Cerita</Link></li>
-            <li><Link to='/volunteer' class="inline-block no-underline hover:text-black font-medium text-md py-2 px-4 :-ml-2" >Volunteer</Link></li>
 
-         </ul>
-      </nav>
-   </div>
-   
-   <div class="order-2 md:order-3 flex flex-wrap items-center justify-end mr-0 md:mr-4" id="nav-content">
-      <div class="auth flex items-center w-full md:w-full">
-         <button class="bg-transparent text-gray-800  p-2 rounded border border-gray-300 mr-4 hover:bg-gray-100 hover:text-gray-700"> <Link to = '/login'> Masuk </Link> </button>
-         <button class="bg-blue-600 text-gray-200  p-2 rounded  hover:bg-blue-500 hover:text-gray-100"><Link to = '/register'> Daftar </Link></button>
-      </div>
-   </div>
-</div>
-</nav>
+import React, { useState } from "react";
+import styled from "styled-components";
+
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <Nav>
+      <Logo href="">
+        Eli<span>Codes</span>
+      </Logo>
+      <Hamburger onClick={() => setIsOpen(!isOpen)}>
+        <span />
+        <span />
+        <span />
+      </Hamburger>
+      <Menu isOpen={isOpen}>
+        <MenuLink href="">Our Work</MenuLink>
+        <MenuLink href="">About</MenuLink>
+        <MenuLink href="">Careers</MenuLink>
+        <MenuLink href="">Contact</MenuLink>
+      </Menu>
+    </Nav>
+  );
+};
+
+export default Navbar;
+
+const MenuLink = styled.a`
+  padding: 1rem 2rem;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  color: #67bc98;
+  transition: all 0.3s ease-in;
+  font-size: 0.9rem;
+  &:hover {
+    color: #7b7fda;
+  }
+`;
+
+const Nav = styled.div`
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+`;
+
+const Logo = styled.a`
+  padding: 1rem 0;
+  color: #7b7fda;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 1.7rem;
+  span {
+    font-weight: 300;
+    font-size: 1.3rem;
+  }
+`;
+
+const Menu = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  @media (max-width: 768px) {
+    overflow: hidden;
+    flex-direction: column;
+    max-height: ${({ isOpen }) => (isOpen ? "300px" : "0")};
+    transition: max-height 0.3s ease-in;
+    width: 100%;
+  }
+`;
+
+const Hamburger = styled.div`
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  span {
+    height: 2px;
+    width: 25px;
+    background: #7b7fda;
+    margin-bottom: 4px;
+    border-radius: 5px;
+  }
+  @media (max-width: 768px) {
+    display: flex;
+  }
+`;
