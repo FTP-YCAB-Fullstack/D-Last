@@ -6,9 +6,14 @@ import { useDispatch, useSelector } from 'react-redux'
 function Nav() {
     const logAs = useSelector(state => state.logAs)
     const isLogin = useSelector(state => state.isLogin)
+    const dispatch = useDispatch()
 
-    useEffect(() => console.log(isLogin)
-    ,[isLogin])
+    const logout = (e) => {
+      e.preventDefault()
+      dispatch({type : "LOGOUT"})
+
+      localStorage.removeItem("token");
+    }
 
     return (
     <nav id="header" className="z-30 py-1 bg-white shadow-lg border-b border-blue-400 mt-5">
@@ -20,13 +25,12 @@ function Nav() {
            <div className="hidden md:flex md:items-center md:w-auto w-full order-3 md:order-1" id="menu">
               <nav>
                  <ul className="md:flex items-center justify-between text-base text-blue-600 pt-4 md:pt-0">
-                    <li><Link to='/home' className="inline-block no-underline hover:text-black font-medium text-lg py-2 px-4 lg:-ml-2" >Home</Link></li>
+                    <li><Link to='/' className="inline-block no-underline hover:text-black font-medium text-lg py-2 px-4 lg:-ml-2" >Home</Link></li>
                     <li><a className="inline-block no-underline hover:text-black font-medium text-lg py-2 px-4 lg:-ml-2" href="#">Service</a></li>
                     <li><a className="inline-block no-underline hover:text-black font-medium text-lg py-2 px-4 lg:-ml-2" href="#">Kondisi Kesehatan</a></li>
                     <li><Link to='/rumah-sakit' className="inline-block no-underline hover:text-black font-medium text-lg py-2 px-4 lg:-ml-2" >Rumah Sakit</Link></li>
                     <li><Link to='/cerita' className="inline-block no-underline hover:text-black font-medium text-lg py-2 px-4 lg:-ml-2" >Cerita</Link></li>
                     <li><Link to='/volunteer' className="inline-block no-underline hover:text-black font-medium text-lg py-2 px-4 lg:-ml-2" >Volunteer</Link></li>
-
                  </ul>
               </nav>
            </div>
@@ -37,6 +41,7 @@ function Nav() {
             <div className="order-2 md:order-3 flex flex-wrap items-center justify-end mr-0 md:mr-4" id="nav-content">
                <div className="auth flex items-center w-full md:w-full">
                   <h4 className="bg-transparent text-gray-800  p-2 rounded border-gray-300 mr-4 hover:bg-gray-100 hover:text-gray-700"> Halo {logAs.username} </h4>
+                  <button onClick={logout} className="bg-blue-600 text-gray-200  p-2 rounded  hover:bg-blue-500 hover:text-gray-100">Logout</button>
                </div>
             </div>
            : 
@@ -47,10 +52,6 @@ function Nav() {
                </div>
             </div> 
             }
-           
-           <button onClick={() => console.log(logAs)}>Check</button>
-
-           {/* <h4 className="flex justify-end">Halo Iqbal</h4> */}
            
         </div>
      </nav>
