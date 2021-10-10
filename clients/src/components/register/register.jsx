@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import axios from "axios"
-import { useHistory } from 'react-router-dom'
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 function Register() {
     const history = useHistory()
@@ -68,4 +68,4 @@ function Register() {
     )
 }
 
-export default Register
+export default Register;

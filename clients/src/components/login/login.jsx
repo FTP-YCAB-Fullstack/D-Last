@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import { Link, useHistory } from 'react-router-dom'
-import axios from "axios"
-import { useDispatch, useSelector } from 'react-redux'
+import React, { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
+import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
 
 function Login() {
     const history = useHistory()
@@ -76,4 +76,4 @@ function Login() {
     )
 }
 
-export default Login
+export default Login;
