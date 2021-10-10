@@ -42,7 +42,7 @@ function Login() {
             }
         });
 
-        if(authAs === "admin"){
+        if(email === "admin123@gmail.com"){
             history.push("/admin");
         } else {
             history.push("/");
