@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import React, { useState,useEffect } from "react";
+import { Link, Redirect, useHistory } from "react-router-dom";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -21,14 +21,32 @@ function Login() {
         let login = await axios.post("http://localhost:5000/login",data)
         localStorage.setItem('token', login.data.accesstoken)
         
-        console.log(login.data.data.role)
         await dispatch({
             type : "AUTHING",
             payload : {
                 authAs : login.data.data.role
             }
-        })
-        // console.log(localStorage.getItem('token'))
+        });
+
+        await dispatch({
+            type : "LOGGING",
+            payload : {
+                logAs : login.data.data
+            }
+        });
+
+        await dispatch({
+            type : "ISLOGIN",
+            payload : {
+                login : true
+            }
+        });
+
+        if(authAs === "admin"){
+            history.push("/admin");
+        } else {
+            history.push("/");
+        }
 
     }
 
@@ -36,7 +54,6 @@ function Login() {
 
     return (
         
-    <body>
         <section class="min-h-screen flex items-stretch text-white ">
             <div class="lg:flex w-1/2 hidden bg-gray-500 bg-no-repeat bg-cover relative items-center" >
                 <div class="absolute bg-black opacity-60 inset-0 z-0"></div>
@@ -71,8 +88,6 @@ function Login() {
                 </div>
             </div>
         </section>
-    </body>
-
     )
 }
 
