@@ -32,7 +32,7 @@ function NavBar () {
 
     
     return (
-        <>
+        <div className= "block">
             <Nav>
                 <Bars onClick={() => setIsOpen(!isOpen)}>
                 </Bars>
@@ -78,7 +78,7 @@ function NavBar () {
                 </NavBtn>
                 }
             </Nav>
-        </>
+        </div>
     )}
     
 export default NavBar
