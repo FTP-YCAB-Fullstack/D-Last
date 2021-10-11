@@ -9,6 +9,8 @@ function NavBar () {
     const isLogin = useSelector(state => state.isLogin)
     const dispatch = useDispatch()
 
+    const token = localStorage.getItem('token');
+
     const Menu = styled.div`
     display: flex;
     justify-content: space-between;
@@ -57,9 +59,9 @@ function NavBar () {
                     </NavLink>
                 </Menu>
 
-                {isLogin ? 
+                {token ? 
                 <NavBtn>
-                      <h1>Halo {logAs.username}</h1> 
+                      <h1>Selamat Datang</h1> 
                      <NavLink to='/'>
                         <BtnOut onClick={logout}>
                             Keluar
