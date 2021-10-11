@@ -27,7 +27,7 @@ const healthConditionSchema = mongoose.Schema({
   },
   thumbnail: {
       type : String,
-      required:true
+      required: true
   }
 });
 

@@ -22,9 +22,10 @@ function Register() {
             password
         }
 
-        let health = await axios.post("http://localhost:5000/register",data)
-
-        console.log(health)
+        let health = await axios.post("http://localhost:5000/register",data).catch(err => {
+            console.log(err.response.data.message)
+        })
+        
         history.push('/login')
     }
 
