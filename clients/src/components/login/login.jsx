@@ -21,6 +21,7 @@ function Login() {
         let login = await axios.post("http://localhost:5000/login",data)
         localStorage.setItem('token', login.data.accesstoken)
         
+        
         await dispatch({
             type : "AUTHING",
             payload : {
@@ -41,6 +42,8 @@ function Login() {
                 login : true
             }
         });
+
+        localStorage.setItem('authAs', login.data.data.role)
 
         if(email === "admin123@gmail.com"){
             history.push("/admin");

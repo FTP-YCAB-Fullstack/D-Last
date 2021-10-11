@@ -30,6 +30,7 @@ function NavBar () {
       dispatch({type : "LOGOUT"})
 
       localStorage.removeItem("token");
+      localStorage.removeItem("authAs");
     }
 
     
