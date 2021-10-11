@@ -54,12 +54,12 @@ function Login() {
 
     return (
         
-<section class="min-h-screen flex items-stretch text-white ">
-            <div class="lg:flex w-1/2 hidden bg-gray-500 bg-no-repeat bg-cover relative items-center" >
-                <div class="absolute bg-black opacity-60 inset-0 z-0"></div>
-                <div class="w-full px-24 z-10">
-                    <h1 class="text-5xl font-bold text-left tracking-wide">Halo Maniezz</h1>
-                    <p class="text-3xl my-4">Capture your personal memory in unique way, anywhere.</p>
+<section className="min-h-screen flex items-stretch text-white ">
+            <div className="lg:flex w-1/2 hidden bg-gray-500 bg-no-repeat bg-cover relative items-center" >
+                <div className="absolute bg-black opacity-60 inset-0 z-0"></div>
+                <div className="w-full px-24 z-10">
+                    <h1 className="text-5xl font-bold text-left tracking-wide">Halo Maniezz</h1>
+                    <p className="text-3xl my-4">Capture your personal memory in unique way, anywhere.</p>
                 </div>
             </div>
             <div className="lg:w-1/2 w-full flex items-center justify-center text-center md:px-16 px-0 z-0" >
