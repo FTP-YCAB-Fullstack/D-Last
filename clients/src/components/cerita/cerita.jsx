@@ -10,7 +10,7 @@ function Cerita() {
     return (
         <div>
             <Nav/>
-            <div className= " pt-16 h-screen flex justify-center flex-col ">
+            <div className= " pt-16 h-screen flex justify-center items-center flex-col ">
                 <div className= " flex flex-wrap items-center w-11/12 gap-y-4">
                     <div className="max-w-md mx-auto ">
                         <div className="bg-white shadow-md border border-gray-200 rounded-lg max-w-xs mb-5">
