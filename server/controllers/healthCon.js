@@ -26,6 +26,7 @@ let healthyController = {
         ciri: ciri,
         credit: credit,
         penanggulangan: penanggulangan,
+        thumbnail : req.file.originalname
       };
 
       const newPost = await Healthy.create(payload);
