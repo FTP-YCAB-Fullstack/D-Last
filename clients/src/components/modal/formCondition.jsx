@@ -28,6 +28,9 @@ const FormCondition = (props) => {
 
             const data = await axios.post("http://localhost:5000/health-conditions",formData)
             console.log("Success Add To Article")
+
+            props.close(false)
+
         } catch (error) {
             console.log(error)
         }
