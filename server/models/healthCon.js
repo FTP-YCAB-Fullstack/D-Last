@@ -25,6 +25,10 @@ const healthConditionSchema = mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  thumbnail: {
+      type : String,
+      required:true
+  }
 });
 
 module.exports = mongoose.model("healthconditions", healthConditionSchema);

@@ -58,7 +58,7 @@ function Login() {
             <div class="lg:flex w-1/2 hidden bg-gray-500 bg-no-repeat bg-cover relative items-center" >
                 <div class="absolute bg-black opacity-60 inset-0 z-0"></div>
                 <div class="w-full px-24 z-10">
-                    <h1 class="text-5xl font-bold text-left tracking-wide">Keep it special</h1>
+                    <h1 class="text-5xl font-bold text-left tracking-wide">Halo Maniezz</h1>
                     <p class="text-3xl my-4">Capture your personal memory in unique way, anywhere.</p>
                 </div>
             </div>
