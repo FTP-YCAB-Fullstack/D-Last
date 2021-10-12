@@ -4,13 +4,16 @@ function StoryDetail(props) {
     return (
         <>
             <div className="modalBg w-screen h-screen top-0 fixed flex items-center">
-                <div className="modalcheck h-5/6 w-5/6 p-4 gap-y-4 bg-gray-400 overflow-auto">
+                <div className="modalcheck h-5/6 w-5/6 p-4 gap-y-4 bg-white border-green-700 border-2 overflow-auto">
                     <div className="btnClose">
-                        <button className="text-xl text-red-700 text-right w-full pr-4 cursor-pointer" onClick={() => props.close(false)}>X</button>
+                        <button className="text-xl text-green-900 text-right w-full pr-4 cursor-pointer" onClick={() => props.close(false)}>X</button>
                     </div>
-                    <h1>{props.judul} ?</h1>
-                    <p>Penulis :</p>
-                    <p>{props.penulis}</p>
+                    <div className="display flex flex-col">
+                        <h1 className="text-gray-600 font-extrabold text-4xl text-center p-8">{props.judul} </h1>
+                        <p className="text-right text-gray-600 pb-5 ">ditulis oleh : <span className="text-blue-500"> {props.penulis} </span> </p>
+                        <p className="text-center text-gray-600">{props.deskripsi}</p>
+                    </div>
+                    
                 </div>
             </div>     
         </>
