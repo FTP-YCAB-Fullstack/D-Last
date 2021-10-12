@@ -50,10 +50,10 @@ function Condition() {
                 </div>
                 <div className="w-full flex justify-center">
                     <div class="m-6 space-y-3 w-72 bg-green-700 ">
-                        <button
+                        {/* <button
                             class="block rounded-full py-3 px-6 w-full px-6 py-2 text-xs font-medium leading-6 text-center text-white uppercase transition bg-green-700 rounded shadow ripple hover:shadow-lg hover:bg-green-800 focus:outline-none">
                             Buat Cerita Disini!
-                        </button>
+                        </button> */}
                     </div>
                 </div>
             </div>

@@ -1,17 +1,4 @@
 const Story = require("../models/stories");
-const multer = require("multer")
-
-const storage = multer.diskStorage({
-  destination: (req, file, callback) => {
-    callback(null, "./client/public/uploads")
-  },
-  filename: (req, file, callback) => {
-    callback(null, file.originalname)
-  }
-})
-
-const upload = multer({storage: storage});
-
 
 let storiesController = {
   getAll: async (req, res, next) => {
@@ -33,10 +20,10 @@ let storiesController = {
     try {
       const { judul, penulis, deskripsi, thumbnail } = await req.body;
       const payload = await {
-        thumbnail: thumbnail,
         judul: judul,
         penulis: penulis,
         deskripsi: deskripsi,
+        thumbnail: req.file.originalname
       };
 
       const newPost = await Story.create(payload);
