@@ -3,7 +3,7 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import NavBar from "./components/nav/nav";
+// import NavBar from "./components/nav/nav";
 import AdminPage from "./pages/AdminPage";
 import HomePage from "./pages/HomePage";
 import HospitalPage from "./pages/HospitalPage";
@@ -22,7 +22,6 @@ function App() {
         <Route path="/login" exact component={LoginPage}/>
         <Route path="/register" exact component={RegisterPage}/>
         <Private path='/cerita' exact component={CeritaPage}/>
-        
         <Route path='/rumah-sakit' exact component={HospitalPage}/>
         <Route path='/health-condition' exact component={ConditionPage}/>
         <Private path='/volunteer' exact component={VolunteerPage}/>

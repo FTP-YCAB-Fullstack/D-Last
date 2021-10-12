@@ -13,6 +13,16 @@ const getApi = (section) => {
                     }
                 })
             }
+            if (section === "story"){
+                let api = await axios.get("http://localhost:5000/stories")
+                api = api.data.data
+                dispatch({
+                    type : "GET_STORY",
+                    payload : {
+                        api : api
+                    }
+                })
+            }
         } catch (error) {
             console.log(error)
         }
