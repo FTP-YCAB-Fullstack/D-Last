@@ -26,7 +26,7 @@ function Cerita() {
         <div>
             <Nav/>
             <div className= " overflow-auto p-12 h-11/12 flex justify-center items-center flex-col ">
-                <div className= " flex flex-wrap items-center w-11/12 gap-y-4">
+                <div className= " flex flex-wrap items-center w-11/12 gap-x-4 gap-y-4">
                     {stories.map((el,key) => {
                         return (
                             <>

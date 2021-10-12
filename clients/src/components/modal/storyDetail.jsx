@@ -11,7 +11,7 @@ function StoryDetail(props) {
                     <div className="display flex flex-col">
                         <h1 className="text-gray-600 font-extrabold text-4xl text-center p-8">{props.judul} </h1>
                         <p className="text-right text-gray-600 pb-5 ">ditulis oleh : <span className="text-blue-500"> {props.penulis} </span> </p>
-                        <p className="text-center text-gray-600">{props.deskripsi}</p>
+                        <p className="text-justify text-gray-600">{props.deskripsi}</p>
                     </div>
                     
                 </div>
