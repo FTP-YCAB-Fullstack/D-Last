@@ -2,54 +2,62 @@ import React, { useState,useEffect } from "react";
 import { Link, Redirect, useHistory } from "react-router-dom";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
+import Swal from "sweetalert2";
 
 function Login() {
     const history = useHistory()
     const [email,setEmail] = useState("")
     const [password,setPassword] = useState("")
 
-    const authAs = useSelector(state => state.authAs)
+    const logAs = useSelector(state => state.logAs)
     const dispatch = useDispatch()
 
     const submited = async (e) => {
-        e.preventDefault()
-        let data = {
-            email,
-            password
+        try {
+            e.preventDefault()
+            let data = {
+                email,
+                password
+            }
+
+            let login = await axios.post("http://localhost:5000/login",data)
+            localStorage.setItem('token', login.data.accesstoken)
+            
+            await dispatch({
+                type : "AUTHING",
+                payload : {
+                    authAs : login.data.data.role
+                }
+            });
+
+            localStorage.setItem('authAs', login.data.data.role)
+
+            await dispatch({
+                type : "LOGGING",
+                payload : {
+                    logAs : login.data.data
+                }
+            });
+
+            Swal.fire({
+                icon: 'success',
+                title: 'Login Success',
+              })
+
+            if(email === "admin123@gmail.com"){
+                history.push("/admin");
+            } else {
+                history.push("/");
+            }
+        } catch (error) {
+            console.log(error.response.data.message)
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: error.response.data.message,
+              })
         }
-
-        let login = await axios.post("http://localhost:5000/login",data)
-        localStorage.setItem('token', login.data.accesstoken)
         
-        
-        await dispatch({
-            type : "AUTHING",
-            payload : {
-                authAs : login.data.data.role
-            }
-        });
-
-        await dispatch({
-            type : "LOGGING",
-            payload : {
-                logAs : login.data.data
-            }
-        });
-
-        await dispatch({
-            type : "ISLOGIN",
-            payload : {
-                login : true
-            }
-        });
-
-        localStorage.setItem('authAs', login.data.data.role)
-
-        if(email === "admin123@gmail.com"){
-            history.push("/admin");
-        } else {
-            history.push("/");
-        }
 
     }
 
@@ -81,7 +89,7 @@ function Login() {
                         <div className="pb-2 pt-4">
                             <input type="password" placeholder="type your password here" onChange={(e)=>setPassword(e.target.value)} className="block w-full p-4 text-lg rounded-sm bg-black" />
                         </div>
-                        <div className="text-right text-black hover:underline hover:text-gray-100">
+                        <div className="text-right text-black hover:underline hover:text-blue-600">
                             <Link to="/register">Daftar disini</Link>
                         </div>
                         <div className="px-4 pb-2 pt-4">

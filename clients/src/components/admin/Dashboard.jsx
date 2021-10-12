@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import FormCondition from '../modal/formCondition'
+import Swal from 'sweetalert2';
 
 function Dashboard() {
     const [open, setOpen] = useState(false)

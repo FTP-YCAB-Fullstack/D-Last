@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import Swal from "sweetalert2";
 
 function Register() {
     const history = useHistory()
@@ -15,18 +16,25 @@ function Register() {
     // },[nama,email,password])
 
     const submited = async (e) => {
-        e.preventDefault()
-        let data = {
-            nama,
-            email,
-            password
-        }
+        try {
+            e.preventDefault()
+            let data = {
+                nama,
+                email,
+                password
+            }
 
-        let health = await axios.post("http://localhost:5000/register",data).catch(err => {
-            console.log(err.response.data.message)
-        })
+            let health = await axios.post("http://localhost:5000/register",data)
+            
+            history.push('/login')
+        } catch (error) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Something wrong happen',
+                text: error.response.data.message,
+              })
+        }
         
-        history.push('/login')
     }
 
     return (

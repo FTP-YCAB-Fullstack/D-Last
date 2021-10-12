@@ -12,8 +12,7 @@ function Condition() {
 
     useEffect(() => {
         dispatch(getApi("condition"))
-        console.log(conditions)
-    },[])
+    },[conditions])
 
     const cardData = (el) => {
         setDataCard(el)
