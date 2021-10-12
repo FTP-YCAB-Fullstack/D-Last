@@ -30,7 +30,7 @@ function Condition() {
                             <>
                                 <div key={key} className="max-w-md mx-auto ">
                                     <div className="bg-white shadow-md border border-gray-200 rounded-lg max-w-xs mb-5">
-                                        <img className="w-full" src={`http://localhost:5000/${el.thumbnail}`} alt=""/>
+                                        <img className="rounded-t-lg h-52 w-screen" src={`http://localhost:5000/${el.thumbnail}`} alt=""/>
                                         <div className="p-5 flex items-center flex-col">
                                             <h5 className="text-gray-900 font-bold text-center text-2xl tracking-tight mb-2">{el.judul}</h5>
                                             <a  onClick={() => cardData(el)}
