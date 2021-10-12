@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import Swal from "sweetalert2";
 
 function Register() {
     const history = useHistory()
@@ -15,17 +16,25 @@ function Register() {
     // },[nama,email,password])
 
     const submited = async (e) => {
-        e.preventDefault()
-        let data = {
-            nama,
-            email,
-            password
+        try {
+            e.preventDefault()
+            let data = {
+                nama,
+                email,
+                password
+            }
+
+            let health = await axios.post("http://localhost:5000/register",data)
+            
+            history.push('/login')
+        } catch (error) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Something wrong happen',
+                text: error.response.data.message,
+              })
         }
-
-        let health = await axios.post("http://localhost:5000/register",data)
-
-        console.log(health)
-        history.push('/login')
+        
     }
 
     return (
@@ -34,7 +43,7 @@ function Register() {
             <div className="lg:flex w-1/2 hidden bg-gray-500 bg-no-repeat bg-cover relative items-center" >
                 <div className="absolute bg-black opacity-60 inset-0 z-0"></div>
                 <div className="w-full px-24 z-10">
-                    <h1 className="text-5xl font-bold text-left tracking-wide">Keep it special</h1>
+                    <h1 className="text-5xl font-bold text-left tracking-wide">Halo Maniezz</h1>
                     <p className="text-3xl my-4">Capture your personal memory in unique way, anywhere.</p>
                 </div>
             </div>

@@ -2,7 +2,9 @@
 const initialState = {
     authAs : "",
     logAs : {},
-    isLogin : false
+    isLogin : false,
+    dataCondition : [],
+    dataStory: []
 }
 
 const reducer = (state = initialState,action) => {
@@ -33,6 +35,19 @@ const reducer = (state = initialState,action) => {
             authAs : "",
             logAs : {},
             isLogin : false
+        }
+    }
+
+    if(action.type === "GET_CONDITION"){
+        return {
+            ...state,
+            dataCondition : action.payload.api
+        }
+    }
+    if(action.type === "GET_STORY"){
+        return {
+            ...state,
+            dataStory : action.payload.api
         }
     }
 
