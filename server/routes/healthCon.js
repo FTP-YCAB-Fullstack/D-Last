@@ -1,5 +1,7 @@
 const healthConRoute = require("express").Router();
 const healthController = require("../controllers/healthCon");
+const authentication = require("../middlewares/authentication");
+const authorization = require("../middlewares/authorization");
 const multer = require('multer');
 
 const storage = multer.diskStorage({
