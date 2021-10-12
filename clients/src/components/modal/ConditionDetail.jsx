@@ -16,7 +16,7 @@ function ConditionDetail(props) {
                     <p>Penanggulangan :</p>
                     <p>{props.penanggulangan}</p>
                     <p>Credit :</p>
-                    <p>{props.credit}</p>
+                    <a className="underline italic text-blue-500" href={props.credit}>{props.credit}</a>
                 </div>
             </div>     
         </>

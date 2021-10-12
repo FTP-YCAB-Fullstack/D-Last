@@ -28,7 +28,7 @@ function App() {
         <Route path='/health-condition' exact component={ConditionPage}/>
         <Private path='/volunteer' exact component={VolunteerPage}/>
         <Route path="/" exact component={HomePage} />
-        <OnlyPublic path="/admin" exact component={AdminPage} />
+        <OnlyAdmin path="/admin" exact component={AdminPage} />
       </Switch>
     </Router>
     </>

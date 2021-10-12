@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, {useState} from 'react';
+import Swal from 'sweetalert2';
 
 const FormCondition = (props) => {
     const [judul, setJudul] = useState("")
@@ -28,6 +29,12 @@ const FormCondition = (props) => {
 
             const data = await axios.post("http://localhost:5000/health-conditions",formData)
             console.log("Success Add To Article")
+
+            Swal.fire({
+                icon: 'success',
+                title: 'Success',
+                text: 'Success Post Mental Health',
+              });
 
             props.close(false)
 
