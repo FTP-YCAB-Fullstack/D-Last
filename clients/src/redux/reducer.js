@@ -51,7 +51,6 @@ const reducer = (state = initialState,action) => {
             dataStory : action.payload.api
         }
     }
-
     if(action.type === "GET_HOSPITAL"){
         return {
             ...state,
