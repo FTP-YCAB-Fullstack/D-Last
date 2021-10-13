@@ -23,6 +23,16 @@ const getApi = (section) => {
                     }
                 })
             }
+            if (section === "hospital"){
+                let api = await axios.get("http://localhost:5000/api")
+                api = api.data.dataApi
+                dispatch({
+                    type : "GET_HOSPITAL",
+                    payload : {
+                        api : api
+                    }
+                })
+            }
         } catch (error) {
             console.log(error)
         }
