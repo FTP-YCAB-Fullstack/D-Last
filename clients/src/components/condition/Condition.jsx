@@ -33,10 +33,10 @@ function Condition() {
                                         <img className="rounded-t-lg h-52 w-screen" src={`http://localhost:5000/${el.thumbnail}`} alt=""/>
                                         <div className="p-5 flex items-center flex-col">
                                             <h5 className="text-gray-900 font-bold text-center text-2xl tracking-tight mb-2">{el.judul}</h5>
-                                            <a  onClick={() => cardData(el)}
-                                                className="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center" href="#">
+                                            <button  onClick={() => cardData(el)}
+                                                className="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center">
                                                 Read more
-                                            </a>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
