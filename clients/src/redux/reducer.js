@@ -5,7 +5,7 @@ const initialState = {
     isLogin : false,
     dataCondition : [],
     dataStory: [],
-    hospital:[]
+    hospital : []
 }
 
 const reducer = (state = initialState,action) => {

@@ -5,8 +5,13 @@ import axios from "axios"
 import { useDispatch, useSelector } from 'react-redux'
 import getApi from '../../redux/action'
 
+import { useDispatch, useSelector } from 'react-redux'
+import getApi from '../../redux/action'
 function Hospital() {
+    const hospitals = useSelector(state => state.hospital)
+    const dispatch = useDispatch()
 
+    const [input,setInput] = useState("")
     const hospitals = useSelector(state => state.hospital)
     const dispatch = useDispatch()
 
@@ -15,11 +20,20 @@ function Hospital() {
         console.log(hospitals)
     },[])
 
+    useEffect(() => {
+        console.log(input)
+    },[input])
+
     return (
         <div>
             <NavBar/>
             <h1>ini hospital</h1>
-            <button onClick={() => console.log(hospitals)}>Check</button>
+            <form >
+                <div className="inp">
+                    <input type="text" onChange={(e) => setInput(e.target.value)} placeholder="Masukan nama provinsi"/>
+                    <input type="button" onClick={() => console.log(hospitals)} value="Check"/>
+                </div>
+            </form>
             <p>Nama2 rumah sakit</p>
             {hospitals.map((el,key) => {
                 return (
@@ -29,8 +43,6 @@ function Hospital() {
                 )
             })}
         </div>
-
     )
 }
-
 export default Hospital
