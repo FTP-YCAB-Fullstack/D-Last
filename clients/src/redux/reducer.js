@@ -4,7 +4,8 @@ const initialState = {
     logAs : {},
     isLogin : false,
     dataCondition : [],
-    dataStory: []
+    dataStory: [],
+    hospital:[]
 }
 
 const reducer = (state = initialState,action) => {
@@ -48,6 +49,12 @@ const reducer = (state = initialState,action) => {
         return {
             ...state,
             dataStory : action.payload.api
+        }
+    }
+    if(action.type === "GET_HOSPITAL"){
+        return {
+            ...state,
+            hospital : action.payload.api
         }
     }
 
