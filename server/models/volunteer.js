@@ -37,6 +37,10 @@ const volunteerSchema = mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  status: {
+    type: String,
+    required: true,
+  },
 });
 
 module.exports = mongoose.model("volunteer", volunteerSchema);

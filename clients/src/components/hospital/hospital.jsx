@@ -5,11 +5,7 @@ import axios from "axios"
 import { useDispatch, useSelector } from 'react-redux'
 import getApi from '../../redux/action'
 
-import { useDispatch, useSelector } from 'react-redux'
-import getApi from '../../redux/action'
 function Hospital() {
-    const hospitals = useSelector(state => state.hospital)
-    const dispatch = useDispatch()
 
     const [input,setInput] = useState("")
     const hospitals = useSelector(state => state.hospital)
@@ -35,13 +31,20 @@ function Hospital() {
                 </div>
             </form>
             <p>Nama2 rumah sakit</p>
-            {hospitals.map((el,key) => {
-                return (
-                    <>
+            {
+                hospitals.filter((el) => {
+                    if(input == ""){
+                        return el
+                    } else if (el.province.toLowerCase().includes(input.toLowerCase())){
+                        return el
+                    } 
+                }).map((el,key) => {
+                    return(
                         <p>{el.name}</p>
-                    </>
-                )
-            })}
+                    )
+                })
+            }
+            {/* {hospitals.map((el) => <p>{el.province.toLowerCase()}</p>)} */}
         </div>
     )
 }
