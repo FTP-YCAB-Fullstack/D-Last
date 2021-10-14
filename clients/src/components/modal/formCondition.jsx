@@ -45,7 +45,7 @@ const FormCondition = (props) => {
 
     return(
         <>
-        <div className="modalBg w-screen h-screen top-0 fixed flex justify-center items-center">
+        <div className="modalBg w-screen h-screen left-0 top-0 fixed flex justify-center items-center">
             <div className="modalcheck h-full items-center justify-center flex flex-col p-4 gap-y-4 bg-white w-full">
                 <form onSubmit={submit} className="w-2/3 h-5/6 bg-blue-300 rounded-lg shadow-lg p-4 overflow-auto" encType="multipart/form-data">
                     <div className="flex flex-wrap -mx-3 mb-6">

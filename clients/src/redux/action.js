@@ -1,4 +1,5 @@
 import axios from "axios"
+import Request from "../axios_instance"
 
 const getApi = (section) => {
     return async (dispatch) => {
@@ -28,6 +29,16 @@ const getApi = (section) => {
                 api = api.data.dataApi
                 dispatch({
                     type : "GET_HOSPITAL",
+                    payload : {
+                        api : api
+                    }
+                })
+            }
+            if (section === "unapproved"){
+                let api = await Request.get("/volunteers/unapproved")
+                api = api.data.data
+                dispatch({
+                    type : "GET_UNAPPROVED",
                     payload : {
                         api : api
                     }
