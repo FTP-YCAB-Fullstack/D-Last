@@ -21,14 +21,14 @@ const FormVolunteer = (props) => {
 
             const formData = new FormData();
 
-            formData.append("Nama",Nama)
+            formData.append("nama",Nama)
             formData.append("ttl",ttl)
             formData.append("domisili",domisili)
-            formData.append("Pendidikan",Pendidikan)
+            formData.append("pendidikan_terakhir",Pendidikan)
             formData.append("visi_misi",visiMisi)
-            formData.append("pandangan_mental_health",pandangan)
+            formData.append("pendapat_mental_health",pandangan)
             formData.append("rencana_volunteer",planning)
-            formData.append("pasFoto",pasFoto)
+            formData.append("pas_foto",pasFoto)
 
             const data = await axios.post("http://localhost:5000/volunteers",formData)
             console.log("Success Add Volunteer")
@@ -44,7 +44,7 @@ const FormVolunteer = (props) => {
 
     return(
         <>
-        <div className="modalBg w-screen h-screen top-0 fixed flex justify-center items-center">
+        <div className="w-screen h-screen left-0 top-0 bg-opacity-50 bg-black flex items-center justify-center fixed">
             <div className="modalcheck h-full items-center justify-center flex flex-col p-4 gap-y-4 bg-white w-full">
                 <form onSubmit={submit} className="w-2/3 h-5/6 bg-green-800 rounded-lg shadow-lg p-4 overflow-auto">
                     <div className="flex flex-wrap -mx-3 mb-6">
@@ -121,7 +121,7 @@ const FormVolunteer = (props) => {
                         <label className="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-password">
                             Upload foto mu disini ya ^^
                         </label>
-                        <input type="file" filename="pasFoto" onChange={getImg}></input>
+                        <input type="file" filename="pas_foto" onChange={getImg}></input>
 
                         </div>
                     </div>

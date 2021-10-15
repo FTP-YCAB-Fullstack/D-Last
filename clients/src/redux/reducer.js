@@ -6,7 +6,8 @@ const initialState = {
     dataCondition : [],
     dataStory: [],
     hospital : [],
-    unVolunteer :[]
+    unVolunteer :[],
+    volunteer: []
 }
 
 const reducer = (state = initialState,action) => {
@@ -62,6 +63,12 @@ const reducer = (state = initialState,action) => {
         return {
             ...state,
             unVolunteer : action.payload.api
+        }
+    }
+    if(action.type === "GET_APPROVED"){
+        return{
+            ...state,
+            volunteer: action.payload.api
         }
     }
 

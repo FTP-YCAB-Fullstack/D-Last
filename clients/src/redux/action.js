@@ -44,6 +44,17 @@ const getApi = (section) => {
                     }
                 })
             }
+            if (section === "approved"){
+                console.log()
+                let api = await Request.get("/volunteers/approved")
+                api = api.data.data
+                dispatch({
+                    type : "GET_APPROVED",
+                    payload : {
+                        api : api
+                    }
+                })
+            }
         } catch (error) {
             console.log(error)
         }
