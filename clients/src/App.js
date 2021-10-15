@@ -14,6 +14,7 @@ import CeritaPage from "./pages/StoryPage";
 import VolunteerPage from "./pages/VolunteerPage";
 import Private from "./routes/Private";
 import ConditionPage from "./pages/ConditionPage"
+import VolunteerRegist from "./pages/VolunteerRegist";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Private path='/volunteer' exact component={VolunteerPage}/>
         <Route path="/" exact component={HomePage} />
         <OnlyAdmin path="/admin" exact component={AdminPage} />
+        <OnlyAdmin path="/admin-volunteer" exact component={VolunteerRegist} />
       </Switch>
     </Router>
     </>

@@ -16,6 +16,16 @@ function Hospital() {
         console.log(hospitals)
     },[])
 
+    const filter = () => {
+        return hospitals.filter((el) => {
+            if(input == ""){
+                return el
+            } else if (el.province.toLowerCase().includes(input.toLowerCase())){
+                return el
+            } 
+        })    
+    }
+
     useEffect(() => {
         console.log(input)
     },[input])
@@ -31,18 +41,13 @@ function Hospital() {
                 </div>
             </form>
             <p>Nama2 rumah sakit</p>
-            {
-                hospitals.filter((el) => {
-                    if(input == ""){
-                        return el
-                    } else if (el.province.toLowerCase().includes(input.toLowerCase())){
-                        return el
-                    } 
-                }).map((el,key) => {
+            {   
+                filter().length ? filter().map((el,key) => {
                     return(
                         <p>{el.name}</p>
                     )
-                })
+                }) : <p>Not Found</p>
+                
             }
             {/* {hospitals.map((el) => <p>{el.province.toLowerCase()}</p>)} */}
         </div>
