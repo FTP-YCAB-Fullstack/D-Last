@@ -40,10 +40,10 @@ function Login() {
                 }
             });
 
-            Swal.fire({
-                icon: 'success',
-                title: 'Login Success',
-              })
+            // Swal.fire({
+            //     icon: 'success',
+            //     title: 'Login Success',
+            //   })
 
             if(email === "admin123@gmail.com"){
                 history.push("/admin");
