@@ -1,18 +1,39 @@
 import React, { useState } from 'react'
 import FormCondition from '../modal/formCondition'
-import Swal from 'sweetalert2';
+// import Swal from 'sweetalert2';
 import image from '../images/volunteer_dashboard.jpg'
 import { useHistory } from 'react-router-dom';
+import {useDispatch} from 'react-redux'
+import {NavBtn, BtnOut} from '../nav/navbarStyle'
 
 function Dashboard() {
     const [open, setOpen] = useState(false)
     const history = useHistory()
+    const dispatch = useDispatch()
+
+    const token =localStorage.getItem('token')
+
+    const logout =(e) => {
+        e.preventDefault()
+        dispatch({type: "LOGOUT"})
+
+        localStorage.removeItem("token");
+        localStorage.removeItem('authAs')
+    }
+
 
     return (
         <>
         
             <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 py-12">
                 <div className="text-center pb-12">
+                {token ?
+                 <NavBtn>
+                 <BtnOut onClick={logout}>
+                     Keluar
+                 </BtnOut>
+                </NavBtn>
+                : null }
                     <h2 className="text-base font-bold text-indigo-600">
                         We Love, We Care
                     </h2>

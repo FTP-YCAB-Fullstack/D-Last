@@ -28,7 +28,7 @@ function Volunteer() {
                 <div className="volunteer-box w-full h-72 flex flex-wrap items-center justify-center gap-10">
                     {volunteers.map((el,key) => {
                             return (
-                            <div key={key}  className="w-56 h-full bg-gray-100 rounded-lg p-8 flex flex-col justify-center items-center ">
+                        <div key={key}  className="w-56 h-full bg-gray-100 rounded-lg p-8 flex flex-col justify-center items-center ">
                             <div className="mb-8">
                                 <img className="object-center object-cover rounded-full h-32 w-32" src={`http://localhost:5000/${el.pas_foto}`} alt="photo"/>
                             </div>
@@ -40,8 +40,17 @@ function Volunteer() {
                         )
                     })}
                 </div>
-                <div className="volunteer-box w-full h-5/6 flex flex-col justify-center items-center gap-10 ">
-                <h1>VOLUNTEER ACTIVITY</h1>
+                <h1 className="bg-red-600 mt-20">VOLUNTEER ACTIVITY</h1>
+                <div className="volunteer-box w-full h-72 flex flex-wrap items-center justify-center gap-10 mb-10 mt-10 ">
+                    <div className="w-80 h-5/6 bg-gray-100 rounded-lg p-8 flex flex-col justify-center items-center">
+                        <div className="mb-8">
+                            <img className="object-center object-cover rounded-full h-32 w-32" src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80" alt="photo"/>
+                        </div>
+                        <div className="text-center">
+                            <p className="text-xl text-gray-700 font-bold mb-2">Dany Bailey</p>
+                            <p className="text-base text-gray-400 font-normal">Software Engineer</p>
+                        </div>
+                    </div>
                     <div className="w-80 h-5/6 bg-gray-100 rounded-lg p-8 flex flex-col justify-center items-center">
                         <div className="mb-8">
                             <img className="object-center object-cover rounded-full h-32 w-32" src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80" alt="photo"/>
