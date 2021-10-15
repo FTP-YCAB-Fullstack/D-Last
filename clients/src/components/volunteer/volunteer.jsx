@@ -7,11 +7,15 @@ import getApi from '../../redux/action'
 function Volunteer() {
     const [isOpen, setIsOpen] = useState(false)
     const volunteers= useSelector(state => state.volunteer)
+    const activities = useSelector(state => state.activities)
     const dispatch = useDispatch()
 
     useEffect(() => {
         dispatch(getApi("approved"))
-        console.log(volunteers)
+    },[])
+
+    useEffect(() => {
+        dispatch(getApi("activities"))
     },[])
 
 
@@ -41,6 +45,7 @@ function Volunteer() {
                     })}
                 </div>
                 <div className="volunteer-box w-full h-5/6 flex flex-col justify-center items-center gap-10 ">
+                
                 <h1>VOLUNTEER ACTIVITY</h1>
                     <div className="w-80 h-5/6 bg-gray-100 rounded-lg p-8 flex flex-col justify-center items-center">
                         <div className="mb-8">

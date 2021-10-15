@@ -1,7 +1,12 @@
 import React, { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 import Request from '../../axios_instance'
+import getApi from '../../redux/action'
 
 function VolunteerRegistInfo(props) {
+
+    const dispatch = useDispatch()
+
 
     const Accept = async () => {
         try {
@@ -13,6 +18,7 @@ function VolunteerRegistInfo(props) {
             })
             alert("NEW VOLUNTEER ADDED")
             props.close(false)
+            dispatch(getApi('unapproved'))
         } catch (error) {
             console.log(error)
         }  
@@ -28,6 +34,7 @@ function VolunteerRegistInfo(props) {
             })
             alert("NEW VOLUNTEER REJECTED")
             props.close(false)
+            dispatch(getApi('unapproved'))
         } catch (error) {
             console.log(error)
         }  

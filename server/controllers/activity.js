@@ -1,7 +1,7 @@
 const Activity = require("../models/activity");
 
 let activityController = {
-  getAll: async (req, res, next) => {
+  getAll: async (req, res,next) => {
     try {
       const data = await Activity.find();
 
@@ -10,17 +10,15 @@ let activityController = {
         data: data,
       });
     } catch (error) {
-      res.status(500).json({
-        message: error.message,
-      });
+      next({code:500,message:error.message})
     }
   },
 
-  createData: async (req, res) => {
+  createData: async (req, res,next) => {
     try {
-      const { nama_kegiatan, thumbnail, deskripsi } = await req.body;
-      const payload = await {
-        thumbnail: thumbnail,
+      const { nama_kegiatan,deskripsi } = req.body;
+      const payload = {
+        thumbnail: req.file.originalname,
         nama_kegiatan: nama_kegiatan,
         deskripsi: deskripsi,
       };
@@ -32,13 +30,11 @@ let activityController = {
         data: payload,
       });
     } catch (error) {
-      res.json({
-        message: error.message,
-      });
+      next({code:500,message:error.message})
     }
   },
 
-  getById: async (req, res) => {
+  getById: async (req, res,next) => {
     try {
       const { id } = req.params;
       const data = await Activity.findById(id);
@@ -57,7 +53,7 @@ let activityController = {
     }
   },
 
-  updateById: async (req, res) => {
+  updateById: async (req, res,next) => {
     try {
       const { id } = req.params;
       const { nama_kegiatan, thumbnail, deskripsi } = await req.body;
@@ -82,21 +78,22 @@ let activityController = {
     }
   },
 
-  deleteById: async (req, res) => {
+  deleteById: async (req, res,next) => {
     try {
       const { id } = req.params;
-      const data = await Activity.deleteOne(id);
+      const isExist = await Activity.findById(id)
 
-      data.destroy();
+      if(!isExist){
+          next({code:404,message:"Activity Not Found"})
+          return
+      }
+
+      const deleted = await Activity.findByIdAndDelete(id)
       res.status(200).json({
         message: "success",
       });
     } catch (error) {
-      if (!data) {
-        res.status(404).json({
-          message: "data not found",
-        });
-      }
+      next
     }
   },
 };

@@ -2,10 +2,13 @@ import React, { useState } from 'react'
 import FormCondition from '../modal/formCondition'
 import Swal from 'sweetalert2';
 import image from '../images/volunteer_dashboard.jpg'
+import act from '../images/43052.jpg'
 import { useHistory } from 'react-router-dom';
+import VolunteerAct from '../modal/VolunteerAct';
 
 function Dashboard() {
     const [open, setOpen] = useState(false)
+    const [acti,setActi] = useState(false)
     const history = useHistory()
 
     return (
@@ -39,7 +42,19 @@ function Dashboard() {
                             <p className="text-xl text-gray-700 font-bold mb-2">Volunteer</p>
                         </div>
                     </div>
+
+                    <div onClick={() => setActi(true)} className="w-full bg-green-200 rounded-lg p-12 flex flex-col justify-center items-center">
+                        <div className="mb-8">
+                            <img className="object-center object-cover rounded-full h-36 w-36" src={act} alt="photo"/>
+                        </div>
+                        <div className="text-center">
+                            <p className="text-xl text-gray-700 font-bold mb-2">Aktivitas Volunteer</p>
+                        </div>                 
+                    </div>
+
+                    
                     {open && <FormCondition close={setOpen}/>}
+                    {acti && <VolunteerAct close={setActi}/>}
                 </div>   
                 
             </section>
