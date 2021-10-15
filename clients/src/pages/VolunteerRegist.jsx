@@ -38,7 +38,7 @@ function VolunteerRegist() {
                         return (
                             <div key={key} className="max-w-md mx-auto">
                                 <div className="bg-white shadow-md border border-gray-200 rounded-lg max-w-xs mb-5">
-                                        <img className="rounded-t-lg h-52 w-screen" src={`http://localhost:5000/bg_office.jpg`}  alt=""/>
+                                        <img className="rounded-t-lg h-52 w-screen" src={`http://localhost:5000/${el.pas_foto}`}  alt=""/>
                                         <div className="p-5 flex items-center flex-col">
                                             <h5 className="text-gray-900 font-bold text-center text-xl tracking-tight mb-2">{el.nama}</h5>
                                             <p className="font-normal text-gray-700 mb-3">{el.domisili}</p>

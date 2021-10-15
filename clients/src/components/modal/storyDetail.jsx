@@ -3,8 +3,8 @@ import React from 'react'
 function StoryDetail(props) {
     return (
         <>
-            <div className="modalBg w-screen h-screen top-0 fixed flex items-center p-8">
-                <div className="modalcheck h-5/6 w-5/6 p-4 gap-y-4 bg-white border-green-700 border-2 overflow-auto">
+            <div className="modalBg w-screen h-screen top-0 fixed flex items-center p-8 w-screen h-screen left-0 bg-opacity-50 bg-black justify-center">
+                <div className="modalcheck h-5/6 w-5/6 p-4 gap-y-4 bg-white border-green-700 border-2 overflow-auto rounded-xl">
                     <div className="btnClose">
                         <button className="text-xl text-green-900 text-right w-full pr-4 cursor-pointer" onClick={() => props.close(false)}>X</button>
                     </div>
