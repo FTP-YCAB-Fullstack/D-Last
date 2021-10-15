@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import FormStory from '../modal/storyForm'
 import Nav from '../nav/nav'
+import FormStory from '../modal/storyForm'
 import { useDispatch, useSelector } from 'react-redux'
 import getApi from '../../redux/action'
 import StoryDetail from '../modal/storyDetail'
