@@ -1,15 +1,39 @@
 import React, { useState } from 'react'
 import FormCondition from '../modal/formCondition'
-import Swal from 'sweetalert2';
+import {useDispatch, userSelector} from 'react-redux'
+import {NavBtn, NavLink, BtnOut} from '../nav/navbarStyle'
+import { useHistory } from 'react-router'
 
 function Dashboard() {
     const [open, setOpen] = useState(false)
+    const dispatch = useDispatch()
+    const history = useHistory()
+
+    const token =localStorage.getItem('token')
+
+    const logout =(e) => {
+        e.preventDefault()
+        dispatch({type: "LOGOUT"})
+
+        localStorage.removeItem("token");
+        localStorage.removeItem('authAs');
+
+        history.push('/login')
+
+    }
 
     return (
         <>
         
             <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 py-12">
                 <div class="text-center pb-12">
+                {token ?
+                 <NavBtn>
+                 <BtnOut onClick={logout}>
+                     Keluar
+                 </BtnOut>
+                </NavBtn>
+                : null }
                     <h2 class="text-base font-bold text-indigo-600">
                         We Love, We Care
                     </h2>
@@ -17,6 +41,7 @@ function Dashboard() {
                         Admin Dashboard
                     </h1>
                 </div>
+               
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div onClick= {() => setOpen(true)} class="w-full bg-blue-200 rounded-lg p-12 flex flex-col justify-center items-center">
                         <div class="mb-8">
