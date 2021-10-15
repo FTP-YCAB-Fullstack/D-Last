@@ -7,7 +7,8 @@ const initialState = {
     dataStory: [],
     hospital : [],
     unVolunteer :[],
-    volunteer: []
+    volunteer: [],
+    activities:[]
 }
 
 const reducer = (state = initialState,action) => {
@@ -69,6 +70,12 @@ const reducer = (state = initialState,action) => {
         return{
             ...state,
             volunteer: action.payload.api
+        }
+    }
+    if(action.type === "GET_ACTIVITIES"){
+        return{
+            ...state,
+            activities: action.payload.api
         }
     }
 

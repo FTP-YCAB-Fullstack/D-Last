@@ -55,6 +55,16 @@ const getApi = (section) => {
                     }
                 })
             }
+            if (section === "activities"){
+                let api = await Request.get("/activities")
+                api = api.data.data
+                dispatch({
+                    type : "GET_ACTIVITIES",
+                    payload : {
+                        api : api
+                    }
+                })
+            }
         } catch (error) {
             console.log(error)
         }
