@@ -70,7 +70,6 @@ function Cerita() {
                                         Hapus
                                     </a>
                                 </div>
-                                
                             </div>
                         </div>
                     </div>
