@@ -43,102 +43,56 @@ const FormVolunteer = (props) => {
 
 
     return(
-        <>
         <div className="w-screen h-screen left-0 top-0 bg-opacity-50 bg-black flex items-center justify-center fixed">
-            <div className="modalcheck h-full items-center justify-center flex flex-col p-4 gap-y-4 bg-white w-full">
-                <form onSubmit={submit} className="w-2/3 h-5/6 bg-green-800 rounded-lg shadow-lg p-4 overflow-auto">
-                    <div className="flex flex-wrap -mx-3 mb-6">
-                        <div className="w-full px-3">
-                        <label className="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-password">
-                            Nama
-                        </label>
-                        <input onChange={(e) => setNama(e.target.value)}  maxlength="25" className="appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="nick" type="text"/>
-                        </div>
+            <div className="modalcheck h-full items-center justify-center flex flex-col p-4 gap-y-4 bg-white w-2/3">
+            <div class="w-3/4 h-full rounded shadow-2xl p-5 ">
+                <h1 class="w-full text-center text-gray-800 text-2xl font-bold mb-5">Volunteer Form</h1>
+                <form onSubmit={submit} method="post">
+                    <div class="flex flex-col mb-4">
+                        <label class="mb-2 font-bold text-md text-gray-900" >Nama Lengkap</label>
+                        <input onChange={(e) => setNama(e.target.value)} class="border py-2 px-3 text-grey-800" type="text" />
                     </div>
-
-                    <div className="flex flex-wrap -mx-3 mb-6">
-                        <div className="w-full px-3">
-                        <label className="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-password">
-                            Tempat, Tanggal Lahir
-                        </label>
-                        <input onChange={(e) => setttl(e.target.value)}  maxlength="25" className=" appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="message"></input>
-
-                        </div>
+                    <div class="flex flex-col mb-4">
+                        <label class="mb-2 font-bold text-md text-gray-900" >Tempat, tanggal lahir</label>
+                        <input onChange={(e) => setttl(e.target.value)} class="border py-2 px-3 text-grey-800" type="text"  />
                     </div>
-
-                    <div className="flex flex-wrap -mx-3 mb-6">
-                        <div className="w-full px-3">
-                        <label className="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-password">
-                            Domisili
-                        </label>
-                        <input onChange={(e) => setDomisili(e.target.value)}  maxlength="25" className=" appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="message"></input>
-
-                        </div>
+                    <div class="flex flex-col mb-4">
+                        <label class="mb-2 font-bold text-md text-gray-900">Domisili</label>
+                        <input onChange={(e) => setDomisili(e.target.value)} class="border py-2 px-3 text-grey-800" type="text"  />
                     </div>
-
-                    <div className="flex flex-wrap -mx-3 mb-6">
-                        <div className="w-full px-3">
-                        <label className="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-password">
-                            Pendidikan Terakhir
-                        </label>
-                        <input onChange={(e) => setPendidikan(e.target.value)}  maxlength="50" className=" appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="message"></input>
-
-                        </div>
+                    <div class="flex flex-col mb-4">
+                        <label class="mb-2 font-bold text-md text-gray-900" >Pendidkan Terakhir</label>
+                        <input onChange={(e) => setPendidikan(e.target.value)} class="border py-2 px-3 text-grey-800" type="text"  />
                     </div>
-
-                    <div className="flex flex-wrap -mx-3 mb-6">
-                        <div className="w-full px-3">
-                        <label className="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-password">
-                            Apa alasan kamu ingin menjadi volunteer?
-                        </label>
-                        <textarea onChange={(e) => setVisiMisi(e.target.value)}  className=" appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="message"></textarea>
-
-                        </div>
+                    <div class="flex flex-col mb-4">
+                        <label class="mb-2 font-bold text-md text-gray-900" for="textarea">Apa alasan kamu ingin menjadi volunteer?</label>
+                        <textarea onChange={(e) => setVisiMisi(e.target.value)} class="border py-2 px-3 text-grey-800" name="textarea" id="textarea"></textarea>
                     </div>
-
-                    <div className="flex flex-wrap -mx-3 mb-6">
-                        <div className="w-full px-3">
-                        <label className="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-password">
-                            Pendapat kamu tentang mental health apa sih?
-                        </label>
-                        <textarea onChange={(e) => setPandangan(e.target.value)} className=" appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="message"></textarea>
-
-                        </div>
+                    <div class="flex flex-col mb-4">
+                        <label class="mb-2 font-bold text-md text-gray-900" for="textarea">Pendapat kamu tentang mental health apa sih?</label>
+                        <textarea onChange={(e) => setPandangan(e.target.value)} class="border py-2 px-3 text-grey-800" name="textarea" id="textarea"></textarea>
                     </div>
-
-                    <div className="flex flex-wrap -mx-3 mb-6">
-                        <div className="w-full px-3">
-                        <label className="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-password">
-                            Kalau kamu jadi volunteer, rencana yang akan kamu lakukan apa aja sih?
-                        </label>
-                        <textarea onChange={(e) => setPlanning(e.target.value)}  className=" appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="message"></textarea>
-
-                        </div>
+                    <div class="flex flex-col mb-4">
+                        <label class="mb-2 font-bold text-md text-gray-900" for="textarea"> Kalau kamu jadi volunteer, rencana yang akan kamu lakukan apa?</label>
+                        <textarea onChange={(e) => setPlanning(e.target.value)} class="border py-2 px-3 text-grey-800" name="textarea" id="textarea"></textarea>
                     </div>
-                    
-                    <div className="flex flex-wrap -mx-3 mb-6">
-                        <div className="w-full px-3">
-                        <label className="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-password">
-                            Upload foto mu disini ya ^^
-                        </label>
-                        <input type="file" filename="pas_foto" onChange={getImg}></input>
-
-                        </div>
+                    <div class="flex flex-col mb-4">
+                        <label class="mb-2 font-bold text-md text-gray-900" for="File"> Upload foto mu disini ya</label>
+                        <input class="border py-2 px-3 text-grey-800" type="file" filename="pas_foto" onChange={getImg}/>
                     </div>
-
                     <div className="md:flex md:items-center">
                         <div className="md:w-1/3">
-                        <input type="submit" value="Kirim" className="shadow bg-green-600 mr-12 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" />
-                        <button onClick={() => props.close(false)} className="shadow bg-red-400 hover:bg-red-300 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
-                            Batal
-                        </button>
+                            <input type="submit" value="Kirim" className="shadow bg-green-600 mr-12 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" />
+                            <button onClick={() => props.close(false)} className="shadow bg-red-400 hover:bg-red-300 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
+                                Batal
+                            </button>
                         </div>
                         <div className="md:w-2/3"></div>
                     </div>
-                    </form>
+                </form>
             </div>
         </div>
-        </>
+    </div>
         
         
     )

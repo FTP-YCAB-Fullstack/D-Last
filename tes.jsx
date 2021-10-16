@@ -1,8 +1,30 @@
-<div class="xl:w-1/3 md:w-1/2 p-4">
-    <div class="bg-white p-6 rounded-lg">
-      <img class="lg:h-60 xl:h-56 md:h-64 sm:h-72 xs:h-72 h-72 rounded w-full object-cover object-center mb-6" src="https://asset.kompas.com/crops/Pk_pN6vllxXy1RshYsEv74Q1BYA=/56x0:1553x998/750x500/data/photo/2021/06/16/60c8f9d68ff4a.jpg" alt="Image Size 720x400"/>
-      <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
-      <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Colosseum Roma</h2>
-      <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
+<div class="flex justify-center items-center w-full bg-blue-400">
+    <div class="w-1/2 bg-white rounded shadow-2xl p-8 m-4">
+        <h1 class="block w-full text-center text-gray-800 text-2xl font-bold mb-6">Mau Bagiin Cerita apa nih? Yuk sharing ^^</h1>
+        <form onSubmit={submit} method="post">
+            <div class="flex flex-col mb-4">
+                <label class="mb-2 font-bold text-lg text-gray-900" >Judul</label>
+                <input onChange={(e) => setJudul(e.target.value)} class="border py-2 px-3 text-grey-800" type="text" />
+            </div>
+            <div class="flex flex-col mb-4">
+                <label class="mb-2 font-bold text-lg text-gray-900" >Penulis</label>
+                <input onChange={(e) => setPenulis(e.target.value)} class="border py-2 px-3 text-grey-800" type="text" />
+            </div>
+            <div class="flex flex-col mb-4">
+                <label class="mb-2 font-bold text-lg text-gray-900" for="textarea"> Ini kolom cerita mu! Tulis disini ya ^^</label>
+                <textarea onChange={(e) => setDeskripsi(e.target.value)} class="border py-2 px-3 text-grey-800" name="textarea" id="textarea"></textarea>
+            </div>
+            <div class="flex flex-col mb-4">
+                <label class="mb-2 font-bold text-lg text-gray-900" for="File"> Thumbnail</label>
+                <input class="border py-2 px-3 text-grey-800" type="file" filename="thumbnail" onChange={getImg}/>
+                <div className="md:w-1/3">
+                    <input type="submit" value="Kirim" className="shadow bg-green-600 mr-12 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" />
+                    <button onClick={() => props.close(false)} className="shadow bg-red-400 hover:bg-red-300 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
+                        Batal
+                    </button>
+                </div>
+                <div className="md:w-2/3"></div>
+            </div>
+        </form>
     </div>
 </div>
