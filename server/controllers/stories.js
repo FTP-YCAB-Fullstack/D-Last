@@ -87,18 +87,20 @@ let storiesController = {
   deleteById: async (req, res) => {
     try {
       const { id } = req.params;
-      const data = await Story.deleteOne(id);
+      const isExist = await Story.findById(id)
 
-      data.destroy();
-      res.status(200).json({
-        message: "success",
-      });
-    } catch (error) {
-      if (!data) {
-        res.status(404).json({
-          message: "data not found",
-        });
+      if(!isExist){
+          next({code:404,message:"Volunteer Not Found"})
+          return
       }
+
+      const deleted = await Story.findByIdAndDelete(id)
+
+      res.status(200).json({
+        message : "Story Deleted"
+      })
+    } catch (error) {
+      next({code:500, message:"Internal Server Error"})
     }
   },
 };

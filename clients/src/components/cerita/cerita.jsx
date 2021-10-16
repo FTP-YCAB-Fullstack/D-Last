@@ -4,6 +4,8 @@ import FormStory from '../modal/storyForm'
 import { useDispatch, useSelector } from 'react-redux'
 import getApi from '../../redux/action'
 import StoryDetail from '../modal/storyDetail'
+import Request from '../../axios_instance'
+import Swal from 'sweetalert2'
 
 function Cerita() {
     const stories = useSelector(state => state.dataStory)
@@ -16,6 +18,25 @@ function Cerita() {
         dispatch(getApi("story"))
         console.log(stories)
     },[])
+
+    const deleteStory = async (id) => {
+        try {
+            const deleted = await Request({
+                method : 'delete',
+                url : `stories/${id}`
+            }) 
+
+            Swal.fire({
+                icon: 'success',
+                title: 'Story Dihapus',
+              });
+
+            dispatch(getApi("story"))
+
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
     const cardData = (el) => {
         setDataCard(el)
@@ -38,10 +59,17 @@ function Cerita() {
                             <div className="p-5 flex items-center flex-col">
                                 <h5 className="text-gray-900 font-bold text-center text-xl tracking-tight mb-2">{el.judul}</h5>
                                 <p className="font-normal text-gray-700 mb-3">By {el.penulis}</p>
-                                <p className="font-normal text-gray-700 mb-3">{el.createdAt.slice(0,10)}</p>
-                                <a onClick={() => cardData(el)} className="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center" href="#">
-                                    Read more
-                                </a>
+                                <p className="font-normal text-gray-700 mb-3">10 Oktober 2021</p>
+
+                                <div className="Btn flex gap-x-3 w-full justify-center">
+                                    <a onClick={() => cardData(el)} className="text-white w-1/3 bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center">
+                                        Read more
+                                    </a>
+
+                                    <a onClick={() => deleteStory(el._id)} className="text-white w-1/3 bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center">
+                                        Hapus
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>

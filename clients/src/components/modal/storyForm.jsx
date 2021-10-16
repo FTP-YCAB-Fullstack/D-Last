@@ -1,11 +1,17 @@
 import axios from 'axios';
 import React, {useState} from 'react';
+import { useDispatch } from 'react-redux';
+import getApi from '../../redux/action';
+import Swal from 'sweetalert2';
+import Request from '../../axios_instance';
 
 const FormStory = (props) => {
     const [judul, setJudul] = useState("")
     const [penulis, setPenulis] = useState("")
     const [deskripsi, setDeskripsi] = useState("")
     const [thumbnail, setThumbnail] = useState("")
+
+    const dispatch = useDispatch()
 
     const getImg = (e) => {
         setThumbnail(e.target.files[0])
@@ -22,13 +28,34 @@ const FormStory = (props) => {
             formData.append("deskripsi",deskripsi)
             formData.append("thumbnail",thumbnail)
 
-            const data = await axios.post("http://localhost:5000/stories",formData)
-            console.log("Success Add Stories")
+            const token = localStorage.getItem('token')
+
+            const data = await Request({
+                method : 'POST',
+                url : 'stories',
+                headers : {
+                    accesstoken : token
+                },
+                data : formData
+
+            })
+
+
+            Swal.fire({
+                icon: 'success',
+                title: 'Cerita anda telah dibuat !',
+              })
+            
+            dispatch(getApi("story"))
 
             props.close(false)
 
         } catch (error) {
             console.log(error)
+            Swal.fire({
+                icon: 'error',
+                title: 'Admin tidak bisa membuat cerita',
+              })
         }
     }
 

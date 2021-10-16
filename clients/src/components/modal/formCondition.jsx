@@ -1,6 +1,9 @@
 import axios from 'axios';
 import React, {useState} from 'react';
+import { useDispatch } from 'react-redux';
 import Swal from 'sweetalert2';
+import Request from '../../axios_instance';
+import getApi from '../../redux/action';
 
 const FormCondition = (props) => {
     const [judul, setJudul] = useState("")
@@ -9,6 +12,8 @@ const FormCondition = (props) => {
     const [penanggulangan, setPenanggulangan] = useState("")
     const [credit, setCredit] = useState("")
     const [thumbnail, setThumbnail] = useState("")
+
+    const dispatch = useDispatch()
 
     const getImg = (e) => {
         setThumbnail(e.target.files[0])
@@ -27,16 +32,28 @@ const FormCondition = (props) => {
             formData.append("credit",credit)
             formData.append("thumbnail",thumbnail)
 
-            const data = await axios.post("http://localhost:5000/health-conditions",formData)
-            console.log("Success Add To Article")
+            const token = localStorage.getItem('token')
+
+            const newData = await Request({
+                method : 'POST',
+                url : `/health-conditions`,
+                headers : {
+                    accesstoken : token
+                },
+                data : formData
+            })
 
             Swal.fire({
                 icon: 'success',
                 title: 'Success',
                 text: 'Success Post Mental Health',
               });
+              
+            dispatch(getApi('condition'))
 
             props.close(false)
+
+            
 
         } catch (error) {
             console.log(error)

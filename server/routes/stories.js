@@ -1,5 +1,7 @@
 const storiesRoute = require("express").Router();
 const storiesController = require("../controllers/stories");
+const authentication = require("../middlewares/authentication");
+const authorization = require("../middlewares/authorization");
 const multer = require('multer');
 
 const storage = multer.diskStorage({
@@ -13,7 +15,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage: storage})
 
-storiesRoute.post("/stories",upload.single("thumbnail"), storiesController.createData);
+storiesRoute.post("/stories",authentication,authorization(['user']),upload.single("thumbnail"), storiesController.createData);
 storiesRoute.get("/stories", storiesController.getAll);
 storiesRoute.get("/stories/:id", storiesController.getById);
 storiesRoute.patch("/stories/:id", storiesController.updateById);
