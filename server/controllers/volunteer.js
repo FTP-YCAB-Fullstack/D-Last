@@ -21,6 +21,8 @@ const VolunController = {
                 domisili,
                 pendidikan_terakhir,
                 visi_misi,
+                user_id,
+                email,
                 pendapat_mental_health
                 ,rencana_volunteer,
                 pas_foto = req.file.originalname
@@ -32,11 +34,20 @@ const VolunController = {
                 domisili,
                 pendidikan_terakhir,
                 visi_misi,
+                user_id,
+                email,
                 pendapat_mental_health,
                 rencana_volunteer,
                 pas_foto,
                 status : 'unapproved'
             }
+
+            const isExist = await Volunteer.findOne({user_id : user_id})
+
+            if(isExist){
+                return next({code : 422, message : "Volunteer already exist"})
+            }
+
 
             const newVolun = await Volunteer.create(data)
 

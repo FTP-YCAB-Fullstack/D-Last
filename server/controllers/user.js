@@ -84,6 +84,7 @@ let userController = {
         UserId: user._id,
         role: user.role,
         username: user.nama,
+        email : user.email
       };
       const accesstoken = jwt.sign(payload, process.env.JWT_SECRET);
       res.status(200).json({
