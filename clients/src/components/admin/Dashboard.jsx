@@ -21,7 +21,8 @@ function Dashboard() {
         dispatch({type: "LOGOUT"})
 
         localStorage.removeItem("token");
-        localStorage.removeItem('authAs')
+        localStorage.removeItem('authAs');
+        history.push('/')
     }
 
 

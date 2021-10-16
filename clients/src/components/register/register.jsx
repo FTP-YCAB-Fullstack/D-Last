@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import Swal from "sweetalert2";
+import Request from "../../axios_instance";
 
 function Register() {
     const history = useHistory()
@@ -24,7 +25,7 @@ function Register() {
                 password
             }
 
-            let health = await axios.post("http://localhost:5000/register",data)
+            let health = await Request.post("register",data)
             
             history.push('/login')
         } catch (error) {

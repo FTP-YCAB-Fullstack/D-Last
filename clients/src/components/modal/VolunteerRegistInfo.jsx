@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import Request from '../../axios_instance'
 import getApi from '../../redux/action'
+import Swal from 'sweetalert2'
 
 function VolunteerRegistInfo(props) {
 
@@ -16,7 +17,11 @@ function VolunteerRegistInfo(props) {
                 method : "PATCH",
                 url : `volunteers/${id}`
             })
-            alert("NEW VOLUNTEER ADDED")
+            Swal.fire({
+                icon: 'success',
+                title: 'Permintaan Diterima',
+              })
+            
             props.close(false)
             dispatch(getApi('unapproved'))
         } catch (error) {
@@ -32,7 +37,10 @@ function VolunteerRegistInfo(props) {
                 method : 'DELETE',
                 url : `volunteers/${id}`
             })
-            alert("NEW VOLUNTEER REJECTED")
+            Swal.fire({
+                icon: 'error',
+                title: 'Permintaan Ditolak',
+              })
             props.close(false)
             dispatch(getApi('unapproved'))
         } catch (error) {

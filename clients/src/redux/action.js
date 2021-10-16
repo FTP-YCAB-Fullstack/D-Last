@@ -5,7 +5,7 @@ const getApi = (section) => {
     return async (dispatch) => {
         try {
             if(section === "condition"){
-                let api = await axios.get("http://localhost:5000/health-conditions")
+                let api = await Request.get("health-conditions")
                 api = api.data.data
                 dispatch({
                     type : "GET_CONDITION",
@@ -15,7 +15,7 @@ const getApi = (section) => {
                 })
             }
             if (section === "story"){
-                let api = await axios.get("http://localhost:5000/stories")
+                let api = await Request.get("stories")
                 api = api.data.data
                 dispatch({
                     type : "GET_STORY",
@@ -25,7 +25,7 @@ const getApi = (section) => {
                 })
             }
             if (section === "hospital"){
-                let api = await axios.get("http://localhost:5000/api")
+                let api = await Request.get("api")
                 api = api.data.dataApi
                 dispatch({
                     type : "GET_HOSPITAL",

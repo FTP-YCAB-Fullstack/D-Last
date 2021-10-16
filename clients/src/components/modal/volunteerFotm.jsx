@@ -1,5 +1,7 @@
 import axios from 'axios';
 import React, {useState} from 'react';
+import Swal from 'sweetalert2'
+import Request from '../../axios_instance';
 
 const FormVolunteer = (props) => {
     const [Nama, setNama] = useState("")
@@ -30,10 +32,20 @@ const FormVolunteer = (props) => {
             formData.append("rencana_volunteer",planning)
             formData.append("pas_foto",pasFoto)
 
-            const data = await axios.post("http://localhost:5000/volunteers",formData)
+            // const data = await axios.post("http://localhost:5000/volunteers",formData)
+            const data = await Request({
+                url : 'volunteers',
+                method : 'POST',
+                data : formData
+            })
             console.log("Success Add Volunteer")
 
             props.close(false)
+
+            Swal.fire({
+                icon: 'success',
+                title: 'Pendaftaran Berhasil'
+              })
 
         } catch (error) {
             console.log(error)
