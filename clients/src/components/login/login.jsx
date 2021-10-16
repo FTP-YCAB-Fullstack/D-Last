@@ -29,6 +29,8 @@ function Login() {
                 data : data
             })
 
+            
+
             localStorage.setItem('token', login.data.accesstoken)
             
             await dispatch({
@@ -39,6 +41,7 @@ function Login() {
             });
 
             localStorage.setItem('authAs', login.data.data.role)
+            console.log(login.data.data)
 
             await dispatch({
                 type : "LOGGING",

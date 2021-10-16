@@ -13,6 +13,14 @@ const volunteerSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  user_id: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+  },
   pendidikan_terakhir: {
     type: String,
     required: true,
