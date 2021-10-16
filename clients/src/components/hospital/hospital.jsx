@@ -13,7 +13,6 @@ function Hospital() {
 
   useEffect(() => {
     dispatch(getApi("hospital"));
-    console.log(hospitals);
   }, []);
 
   const filter = () => {

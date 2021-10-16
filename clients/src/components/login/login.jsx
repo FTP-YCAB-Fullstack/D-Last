@@ -3,6 +3,7 @@ import { Link, Redirect, useHistory } from "react-router-dom";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import Swal from "sweetalert2";
+import Request from "../../axios_instance";
 
 function Login() {
     const history = useHistory()
@@ -20,7 +21,13 @@ function Login() {
                 password
             }
 
-            let login = await axios.post("http://localhost:5000/login",data)
+            // let login = await axios.post("http://localhost:5000/login",data)
+
+            let login = await Request({
+                method : "POST",
+                url : 'login',
+                data : data
+            })
 
             localStorage.setItem('token', login.data.accesstoken)
             
