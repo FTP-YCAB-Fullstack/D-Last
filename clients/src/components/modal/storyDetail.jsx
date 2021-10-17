@@ -10,7 +10,7 @@ function StoryDetail(props) {
                             <button className="text-xl text-green-900 text-right w-full pr-4 cursor-pointer" onClick={() => props.close(false)}>X</button>
                         </div>
                         <div className="flex flex-col justify-center items-center mb-4 ">
-                            <img className="h-28 w-28 object-cover object-center rounded-full" 
+                            <img className=" w-1/2 mb-6 object-cover object-center " 
                             src={`http://localhost:5000/${props.thumbnail}`} alt="photo"/>
                             <div className="w-full flex flex-col flex-wrap  ">
                                 <p className="text-3xl text-gray-700 font-bold mb-6">{props.judul}</p>
