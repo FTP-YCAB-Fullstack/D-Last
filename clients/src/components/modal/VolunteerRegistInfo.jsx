@@ -55,8 +55,8 @@ function VolunteerRegistInfo(props) {
                             <button className="text-xl font-extrabold text-green-900 text-right w-full pr-4 cursor-pointer" onClick={() => props.close(false)}>X</button>
                         </div>
                     <div className="flex flex-col lg:flex-row justify-around items-center lg:mx-10 py-8">
-                        <div className="w-1/3" >
-                            <img  src="https://cdn.pixabay.com/photo/2016/07/12/19/08/laptop-1512838_1280.png" className="h-auto " alt="" />
+                        <div className="w-1/4" >
+                            <img  src={`http://localhost:5000/${props.pas_foto}`} className="h-auto " alt="" />
                         </div>
                         <div className="lg:w-2/3 w-1/2 mt-4 lg:mt-0 pl-4">
                             <h2 className="dark:text-white font-bold text-lg lg:text-2xl my-2 ">
