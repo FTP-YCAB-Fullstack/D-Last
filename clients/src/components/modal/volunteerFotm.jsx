@@ -67,38 +67,38 @@ const FormVolunteer = (props) => {
 
 
     return(
-        <div className="w-screen h-screen left-0 top-0 bg-opacity-50 bg-black flex items-center justify-center fixed">
-            <div className="modalcheck h-full items-center justify-center flex flex-col p-4 gap-y-4 bg-white w-2/3">
-            <div class="w-3/4 h-full rounded shadow-2xl p-5 ">
-                <h1 class="w-full text-center text-gray-800 text-2xl font-bold mb-5">Volunteer Form</h1>
-                <form onSubmit={submit} method="post">
+        <div className="modalBg w-full h-full top-0 left-0 bg-opacity-50 bg-black fixed flex justify-center items-center">
+            <div className="modalcheck overflow-auto w-full h-full items-center flex flex-col p-4 bg-white">
+            <div className="w-3/4 t-0 mb-8 rounded shadow-2xl p-5 ">
+                <h1 className="w-full text-center text-gray-800 text-xl font-bold mb-4">Volunteer Form</h1>
+                <form onSubmit={submit} className="w-full h-full overflow-hidden" method="post">
                     <div className="flex flex-col mb-4">
-                        <label class="mb-2 font-bold text-md text-gray-900" >Tempat, tanggal lahir</label>
-                        <input onChange={(e) => setttl(e.target.value)} class="border py-2 px-3 text-grey-800" type="text"  />
+                        <label className="mb-2 font-bold text-md text-gray-900" >Tempat, tanggal lahir</label>
+                        <input onChange={(e) => setttl(e.target.value)} className="border py-2 px-3 text-grey-800" type="text"  />
                     </div>
                     <div className="flex flex-col mb-4">
-                        <label class="mb-2 font-bold text-md text-gray-900">Domisili</label>
-                        <input onChange={(e) => setDomisili(e.target.value)} class="border py-2 px-3 text-grey-800" type="text"  />
+                        <label className="mb-2 font-bold text-md text-gray-900">Domisili</label>
+                        <input onChange={(e) => setDomisili(e.target.value)} className="border py-2 px-3 text-grey-800" type="text"  />
                     </div>
                     <div className="flex flex-col mb-4">
-                        <label class="mb-2 font-bold text-md text-gray-900" >Pendidkan Terakhir</label>
-                        <input onChange={(e) => setPendidikan(e.target.value)} class="border py-2 px-3 text-grey-800" type="text"  />
+                        <label className="mb-2 font-bold text-md text-gray-900" >Pendidkan Terakhir</label>
+                        <input onChange={(e) => setPendidikan(e.target.value)} className="border py-2 px-3 text-grey-800" type="text"  />
                     </div>
                     <div className="flex flex-col mb-4">
-                        <label class="mb-2 font-bold text-md text-gray-900" for="textarea">Apa alasan kamu ingin menjadi volunteer?</label>
-                        <textarea onChange={(e) => setVisiMisi(e.target.value)} class="border py-2 px-3 text-grey-800" name="textarea" id="textarea"></textarea>
+                        <label className="mb-2 font-bold text-md text-gray-900" for="textarea">Apa alasan kamu ingin menjadi volunteer?</label>
+                        <textarea onChange={(e) => setVisiMisi(e.target.value)} className="border py-2 px-3 text-grey-800" name="textarea" id="textarea"></textarea>
                     </div>
                     <div className="flex flex-col mb-4">
-                        <label class="mb-2 font-bold text-md text-gray-900" for="textarea">Pendapat kamu tentang mental health apa sih?</label>
-                        <textarea onChange={(e) => setPandangan(e.target.value)} class="border py-2 px-3 text-grey-800" name="textarea" id="textarea"></textarea>
+                        <label className="mb-2 font-bold text-md text-gray-900" for="textarea">Pendapat kamu tentang mental health apa sih?</label>
+                        <textarea onChange={(e) => setPandangan(e.target.value)} className="border py-2 px-3 text-grey-800" name="textarea" id="textarea"></textarea>
                     </div>
                     <div className="flex flex-col mb-4">
-                        <label class="mb-2 font-bold text-md text-gray-900" for="textarea"> Kalau kamu jadi volunteer, rencana yang akan kamu lakukan apa?</label>
-                        <textarea onChange={(e) => setPlanning(e.target.value)} class="border py-2 px-3 text-grey-800" name="textarea" id="textarea"></textarea>
+                        <label className="mb-2 font-bold text-md text-gray-900" for="textarea"> Kalau kamu jadi volunteer, rencana yang akan kamu lakukan apa?</label>
+                        <textarea onChange={(e) => setPlanning(e.target.value)} className="border py-2 px-3 text-grey-800" name="textarea" id="textarea"></textarea>
                     </div>
                     <div className="flex flex-col mb-4">
-                        <label class="mb-2 font-bold text-md text-gray-900" for="File"> Upload foto mu disini ya</label>
-                        <input class="border py-2 px-3 text-grey-800" type="file" filename="pas_foto" onChange={getImg}/>
+                        <label className="mb-2 font-bold text-md text-gray-900" for="File"> Upload foto mu disini ya</label>
+                        <input className="border py-2 px-3 text-grey-800" type="file" filename="pas_foto" onChange={getImg}/>
                     </div>
                     <div className="md:flex md:items-center">
                         <div className="md:w-1/3">
