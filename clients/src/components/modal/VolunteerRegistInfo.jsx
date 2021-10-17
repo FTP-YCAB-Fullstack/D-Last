@@ -50,21 +50,66 @@ function VolunteerRegistInfo(props) {
 
     return (
         <div className="w-screen h-screen left-0 top-0 bg-opacity-50 bg-black flex items-center justify-center fixed">
-                <div className="modalcheck h-5/6 w-5/6 p-4 gap-y-4 bg-white border-green-700 border-2 overflow-auto">
-                    <p>Nama : {props.nama}</p>
+                <div className="modalcheck w-11/12 md:w-2/3 p-4 gap-y-4 bg-white border-green-700 border-2 overflow-auto">
+                    {/* <p>Nama : {props.nama}</p>
                     <p>Tempat tanggal lahir : {props.ttl}</p>
                     <p>ttl : {props.ttl}</p>
                     <p>pendidikan terakhir : {props.pendidikan_terakhir}</p>
                     <p>Visi Misi : {props.visi_misi}</p>
                     <p>Rencana kedepan : {props.rencana_volunteer}</p>
                     <p>Pendapat tentang mental health : {props.pendapat_mental_health} </p>
-                    <button onClick={Accept}
-                            className="shadow bg-blue-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">TERIMA</button>
+                    <img src={`http://localhost:5000/${props.pas_foto}`} alt="" /> */}
+                    <button className="text-right text-3xl text-red-500 w-full" onClick={() => props.close(false) }> X </button>
 
-                    <button onClick={Reject}
-                            className="shadow bg-red-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">TOLAK</button>
+                    <div className="head flex">
+                        <div className="img h-80">
+                            <img className="h-full" src={`http://localhost:5000/${props.pas_foto}`} alt="..." />
+                        </div>
+                        <div className="little p-2 pl-12 w-1/2 flex flex-col gap-y-2 ">
+                            <div className="">
+                                <p className="md:text-2xl text-xl">Nama  </p>
+                                <p className="">{props.nama}</p>
+                            </div>
+                            <div className="">
+                                <p className="md:text-2xl text-xl">Email  </p>
+                                <p className="">{props.email}</p>
+                            </div>
+                            <div className="">
+                                <p className="md:text-2xl text-xl">Tempat Tanggal Lahir</p>
+                                <p className="">{props.ttl}</p>
+                            </div>
+                            <div className="">
+                                <p className="text-2xl">Pendidikan Terakhir </p>
+                                <p className="">{props.pendidikan_terakhir}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="bot mt-8 flex flex-col gap-y-4">
+                        <div className="items flex flex-col">
+                            <p className="text-3xl">Alasan bergabung</p>
+                            <p>{props.visi_misi}</p>
+                        </div>
+                        <div className="items flex flex-col">
+                            <p className="text-3xl">Pendapat mengenai mental health</p>
+                            <p>{props.visi_misi}</p>
+                        </div>
+                        <div className="items flex flex-col">
+                            <p className="text-3xl">Rencana setelah bergabung</p>
+                            <p>{props.visi_misi}</p>
+                        </div>
+                    </div>
+
+                    <div className="Btn flex gap-x-4">
+                        <button onClick={Accept}
+                                className="shadow bg-blue-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">TERIMA</button>
+
+                        <button onClick={Reject}
+                                className="shadow bg-red-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">TOLAK</button>
+                    </div>
                     
-                    <button onClick={() => props.close(false) }> Close </button>
+                    
+                    
                 </div>
         </div>
     )
