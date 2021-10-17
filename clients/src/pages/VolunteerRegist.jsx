@@ -30,10 +30,12 @@ function VolunteerRegist() {
 
     return (
         <div>
-            <div className="relative items-center justify-center">
-                <h1 className="text-center text-2xl mb-8 font-bold p-4">Daftar Ajuan Volunteer</h1>
+            <div className="relative flex flex-col items-center justify-center">
+                <h1 className="text-center text-3xl mb-8 mt-10 font-bold text-green-700 p-4">DAFTAR PENGAJUAN VOLUNTEER</h1>
+                <div className="w-full ml-10">
+                <button className="text-center shadow-lg mb-10 bg-white shadow-4 hover:bg-green-500 focus:shadow-outline focus:outline-none text-green-700 font-bold py-2 px-4 rounded" onClick={back}>🡸 kembali</button>
+                </div>
                 <div className="flex flex-wrap items-center container mx-auto my-auto">
-
                     {unapproved.map((el,key) => {
                         return (
                             <div key={key} className="max-w-md mx-auto">
@@ -55,8 +57,6 @@ function VolunteerRegist() {
                     
                 </div>
             </div>
-
-            <button className="text-center shadow bg-blue-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" onClick={back}>BACK</button>
         </div>
     )
 }
