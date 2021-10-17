@@ -68,10 +68,10 @@ const FormVolunteer = (props) => {
 
     return(
         <div className="w-screen h-screen left-0 top-0 bg-opacity-50 bg-black flex items-center justify-center fixed">
-            <div className="modalcheck h-full items-center justify-center flex flex-col p-4 gap-y-4 bg-white w-2/3">
-            <div class="w-3/4 h-full rounded shadow-2xl p-5 ">
+            <div className="modalcheck h-full items-center overflow-auto justify-center flex flex-col p-4 gap-y-4 bg-white w-2/3">
+            <div class="w-3/4 h-full rounded p-5">
                 <h1 class="w-full text-center text-gray-800 text-2xl font-bold mb-5">Volunteer Form</h1>
-                <form onSubmit={submit} method="post">
+                <form onSubmit={submit} method="post" className="overflow-auto">
                     <div className="flex flex-col mb-4">
                         <label class="mb-2 font-bold text-md text-gray-900" >Tempat, tanggal lahir</label>
                         <input onChange={(e) => setttl(e.target.value)} class="border py-2 px-3 text-grey-800" type="text"  />
@@ -100,8 +100,8 @@ const FormVolunteer = (props) => {
                         <label class="mb-2 font-bold text-md text-gray-900" for="File"> Upload foto mu disini ya</label>
                         <input class="border py-2 px-3 text-grey-800" type="file" filename="pas_foto" onChange={getImg}/>
                     </div>
-                    <div className="md:flex md:items-center">
-                        <div className="md:w-1/3">
+                    <div className="md:flexmd:items-center">
+                        <div className="md:w-1/3 flex">
                             <input type="submit" value="Kirim" className="shadow bg-green-600 mr-12 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" />
                             <button onClick={() => props.close(false)} className="shadow bg-red-400 hover:bg-red-300 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
                                 Batal
