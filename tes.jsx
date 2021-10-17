@@ -1,30 +1,24 @@
-<div class="flex justify-center items-center w-full bg-blue-400">
-    <div class="w-1/2 bg-white rounded shadow-2xl p-8 m-4">
-        <h1 class="block w-full text-center text-gray-800 text-2xl font-bold mb-6">Mau Bagiin Cerita apa nih? Yuk sharing ^^</h1>
-        <form onSubmit={submit} method="post">
-            <div class="flex flex-col mb-4">
-                <label class="mb-2 font-bold text-lg text-gray-900" >Judul</label>
-                <input onChange={(e) => setJudul(e.target.value)} class="border py-2 px-3 text-grey-800" type="text" />
+<div className="modalBg w-full h-full top-0 bg-opacity-50 bg-black fixed flex justify-center items-center">
+<div className="modalcheck overflow-auto w-5/6 md:w-1/2 h-5/6 mt-16 mb-16 rounded-xl items-center justify-center flex flex-col p-4 bg-white">
+    <div className="w-full h-full gap-6 ">
+        <div className="bg-white w-full h-full rounded-lg p-6">
+            <div className="btnClose">
+                <button className="text-xl text-green-900 text-right w-full pr-4 cursor-pointer" onClick={() => props.close(false)}>X</button>
             </div>
-            <div class="flex flex-col mb-4">
-                <label class="mb-2 font-bold text-lg text-gray-900" >Penulis</label>
-                <input onChange={(e) => setPenulis(e.target.value)} class="border py-2 px-3 text-grey-800" type="text" />
-            </div>
-            <div class="flex flex-col mb-4">
-                <label class="mb-2 font-bold text-lg text-gray-900" for="textarea"> Ini kolom cerita mu! Tulis disini ya ^^</label>
-                <textarea onChange={(e) => setDeskripsi(e.target.value)} class="border py-2 px-3 text-grey-800" name="textarea" id="textarea"></textarea>
-            </div>
-            <div class="flex flex-col mb-4">
-                <label class="mb-2 font-bold text-lg text-gray-900" for="File"> Thumbnail</label>
-                <input class="border py-2 px-3 text-grey-800" type="file" filename="thumbnail" onChange={getImg}/>
-                <div className="md:w-1/3">
-                    <input type="submit" value="Kirim" className="shadow bg-green-600 mr-12 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" />
-                    <button onClick={() => props.close(false)} className="shadow bg-red-400 hover:bg-red-300 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
-                        Batal
-                    </button>
+            <div className="flex flex-col justify-center items-center mb-4 ">
+                <img className="h-28 w-28 object-cover object-center rounded-full" 
+                src={props.thumbnail} alt="photo"/>
+                <div className="w-full flex flex-col flex-wrap  ">
+                    <h1 className="text-4xl text-gray-800 font-extrabold text-center mb-6">{props.judul}</h1>
+                    <p className="text-base text-gray-400 font-normal mb-6"> {props.pengertian}</p>
+                    <h2 className="text-4xl text-gray-800 font-extrabold text-center mb-6"> Apa aja sih ciri-cirinya? </h2>
+                    <p className="text-gray-400 leading-loose font-normal text-base ">{props.ciri}</p>
+                    <h2 className="text-4xl text-gray-800 font-extrabold text-center mb-6">Penanggulangan gimana?</h2>
+                    <p className="text-gray-400 leading-loose font-normal text-base ">{props.penanggulangan}</p>
+                    <a className="underline italic text-blue-500" href={props.credit}> <span className="text-gray-300">Credit:</span>{props.credit}</a>
                 </div>
-                <div className="md:w-2/3"></div>
             </div>
-        </form>
+        </div>
     </div>
+</div>
 </div>

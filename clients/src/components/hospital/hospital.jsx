@@ -18,7 +18,9 @@ function Hospital() {
   const filter = () => {
     return hospitals.filter((el) => {
       if (input === "") {
-        return el;
+        // const dataDef = hospitals.slice(0,5)
+        
+        return el
       } else if (el.province.toLowerCase().includes(input.toLowerCase())) {
         return el;
       }
@@ -48,16 +50,18 @@ function Hospital() {
                     img/>
             </div>
         </form>
-      <div className="w-5/6 h-4/6 flex flex-wrap mx-auto justify-center items-center">
+      <div className="w-5/6 h-4/6 flex flex-wrap mx-auto justify-center items-center gap-2">
         {filter().length ? (
           filter().map((el, key) => {
             return (
-                <div className="bg-white shadow-md border border-gray-200 rounded-lg max-w-xs m-5 flex flex-col items-center justify-center">
-                    <img src={HospitalImage} alt="" className="object-center rounded-xl" />
-                    <div className="p-5 flex items-center flex-col">
+                <div className="bg-white p-4 h-96 shadow-md border border-gray-200 rounded-lg max-w-xs m-5 flex flex-col items-center ">
+                    <div className="w-full h-36 mb-5">
+                      <img src={HospitalImage} alt="" className="object-center w-full h-fullrounded-xl " />
+                    </div>
+                    <div className="p-4 flex items-center flex-col">
                         <h5 className="text-gray-900 font-bold text-center text-md tracking-tight mb-2">{el.name}</h5>
-                        <p className="font-normal text-xs text-gray-700 mb-3 text-center">{el.address}</p>
-                        <p className="font-normal text-white mb-3 bg-green-500 rounded p-2 text-center">  {el.phone}</p>
+                        <p className="font-normal text-sm text-gray-700 mb-3 text-center">{el.address}</p>
+                        <p className="font-normal text-green-700 font-bold mb-3 p-2 text-center">  {el.phone}</p>
                     </div>
                 </div>
                 );

@@ -13,6 +13,7 @@ function Cerita() {
     const [openForm,setOpenForm] = useState(false)
     const [open,setOpen] = useState(false)
     const [dataCard, setDataCard] = useState()
+    const authAs = localStorage.getItem("authAs")
 
     useEffect(() => {
         dispatch(getApi("story"))
@@ -53,22 +54,20 @@ function Cerita() {
                             <>
                     <div key={key}  className="max-w-md mx-auto ">
                         <div className="bg-white shadow-md border border-gray-200 rounded-lg max-w-xs mb-5">
-                            {/* <div className="bg-red-200 w-full "> */}
                                 <img className="rounded-t-lg h-52 w-screen" src={`http://localhost:5000/${el.thumbnail}`}  alt=""/>
-                            {/* </div> */}
                             <div className="p-5 flex items-center flex-col">
                                 <h5 className="text-gray-900 font-bold text-center text-xl tracking-tight mb-2">{el.judul}</h5>
                                 <p className="font-normal text-gray-700 mb-3">By {el.penulis}</p>
-                                <p className="font-normal text-gray-700 mb-3">10 Oktober 2021</p>
+                                <p className="font-normal text-gray-700 mb-3">{el.createdAt.slice(0,10)}</p>
 
                                 <div className="Btn flex gap-x-3 w-full justify-center">
-                                    <a onClick={() => cardData(el)} className="text-white w-1/3 bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center">
+                                    <button onClick={() => cardData(el)} className="text-white w-1/3 bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center">
                                         Read more
-                                    </a>
+                                    </button>
 
-                                    <a onClick={() => deleteStory(el._id)} className="text-white w-1/3 bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center">
+                                    {authAs ==="admin" ? <button onClick={() => deleteStory(el._id)} className="text-white w-1/4 bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 inline-flex items-center">
                                         Hapus
-                                    </a>
+                                    </button> : null}
                                 </div>
                             </div>
                         </div>
