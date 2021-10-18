@@ -33,7 +33,7 @@ function VolunteerRegist() {
             <div className="relative flex flex-col items-center justify-center">
                 <h1 className="text-center text-3xl mb-8 mt-10 font-bold text-green-700 p-4">DAFTAR PENGAJUAN VOLUNTEER</h1>
                 <div className="w-full ml-10">
-                    <button className="text-center shadow-lg mb-10 bg-white shadow-4 hover:bg-green-500 focus:shadow-outline focus:outline-none text-green-700 font-bold py-2 px-4 rounded" onClick={back}>🡸 kembali</button>
+                    <button className="text-center shadow-lg mb-10 bg-white shadow-4 hover:bg-green-500 focus:shadow-outline focus:outline-none text-green-700 font-bold py-2 px-4 rounded" onClick={back}><i className="fas fa-angle-double-left "></i> kembali</button>
                 </div>
                 <div className="flex flex-wrap justify-center items-center container mx-auto my-auto t-0 mb-10">
                     <div  class="py-1 t-0 bg-blueGray-50 flex justify-center w-full h-full">
@@ -60,7 +60,10 @@ function VolunteerRegist() {
                                             Tanggal Pengajuan
                                             </th>
                                             <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                                            Status
+                                            Domisili
+                                            </th>
+                                            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                            Pendidikan Terakhir
                                             </th>
                                             <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
                                             Lihat Form
@@ -80,9 +83,11 @@ function VolunteerRegist() {
                                                     <td class="border-t-0 px-6 align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                                                     {el.createdAt.slice(0,15)}
                                                     </td>
-                                                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                                    <i class="text-emerald-500 mr-4"></i>
-                                                    {el.status}
+                                                    <td class="border-t-0 px-6 align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                                    {el.domisili}
+                                                    </td>
+                                                    <td class="border-t-0 px-6 align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                                    {el.pendidikan_terakhir}
                                                     </td>
                                                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                                                         <button onClick={() => cardData(el)} class="text-gray-100 w-full rounded-sm my-5 ml-2 focus:outline-none bg-yellow-600 p-1">
