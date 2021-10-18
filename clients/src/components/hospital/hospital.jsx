@@ -35,9 +35,9 @@ function Hospital() {
     <div className="w-full h-full">
       <NavBar />
       <form>
-        <div className="my-10 text-center">
+        <div className="my-12 text-center">
           <label
-            className="block text-green-900 text-3xl font-bold mb-2"
+            className="block text-green-900 text-3xl font-bold"
             for="province"
           >
             Cari Rumah Sakit
