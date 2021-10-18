@@ -110,9 +110,7 @@ const [pasFoto, setpasFoto] = useState("")
                     </div>
                 </form>
             </div>
-          </form>
         </div>
-      </div>
     </div>
   );
 };
