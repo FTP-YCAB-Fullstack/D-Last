@@ -36,7 +36,7 @@ function Volunteer() {
           Mari Bergabung Menjadi Volunteer
         </h1>
         <div>
-          <h1 className="mt-10 bg-red-200 p-4 rounded-xl">VOLUNTEER MEMBER</h1>
+          <h1 className="my-10 bg-red-200 p-4 rounded-xl">VOLUNTEER MEMBER</h1>
         </div>
         <div className="flex w-full justify-end">
           <button
@@ -47,7 +47,7 @@ function Volunteer() {
           </button>
         </div>
         {isOpen && <FormVolunteer close={setIsOpen} />}
-        <div className="volunteer-box w-full h-72 bg-red-200 flex flex-wrap items-center justify-center gap-10 mb-20">
+        <div className="volunteer-box w-full bg-red-200 flex flex-wrap items-center justify-center gap-10">
           {volunteers.map((el, key) => {
             return (
               <div
@@ -74,7 +74,7 @@ function Volunteer() {
           })}
         </div>
 
-        <h1 className="block text-green-900 text-3xl font-bold">
+        <h1 className="block text-green-900 text-3xl font-bold mt-10">
           Kegiatan dan Event
         </h1>
         <h1 className="mt-10 bg-blue-200 p-4 rounded-xl">VOLUNTEER ACTIVITY</h1>

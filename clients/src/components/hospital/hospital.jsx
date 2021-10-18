@@ -32,58 +32,57 @@ function Hospital() {
   }, [input]);
 
   return (
-    <div className="w-full h-full">
+    <>
       <NavBar />
-      <form>
-        <div className="my-12 text-center">
-          <label
-            className="block text-green-900 text-3xl font-bold"
-            for="province"
-          >
-            Cari Rumah Sakit
-          </label>
+      <div className="w-full h-full flex items-center flex-col">
+        <label
+          className="block text-green-900 text-3xl font-bold mt-10"
+          for="province"
+        >
+          Cari Rumah Sakit
+        </label>
+        <div className="mt-6 bg-white items-center justify-between w-11/12 md:w-2/3 flex rounded-full shadow-lg p-2 mb-5 sticky">
           <input
-            className="shadow mt-10 w-72 placeholder-white text-white appearance-none border rounded-full py-2 px-6 bg-green-500 leading-tight focus:outline-none focus:shadow-outline h-16 "
-            id="province"
-            type="text"
-            placeholder="Masukan nama provinsi"
             onChange={(e) => setInput(e.target.value)}
-            img
+            className="font-bold rounded-full w-full py-4 pl-4 text-gray-700 bg-gray-100 leading-tight focus:outline-none focus:shadow-outline lg:text-sm text-xs"
+            type="text"
+            placeholder="Search"
           />
         </div>
-      </form>
-      <div className="w-5/6 h-4/6 flex flex-wrap mx-auto justify-center items-center gap-2">
-        {filter().length ? (
-          filter().map((el, key) => {
-            return (
-              <div className="bg-white p-4 h-96 shadow-md border border-gray-200 rounded-lg max-w-xs m-5 flex flex-col items-center ">
-                <div className="w-full h-36 mb-5">
-                  <img
-                    src={HospitalImage}
-                    alt=""
-                    className="object-center w-full h-fullrounded-xl "
-                  />
+
+        <div className="w-5/6 h-4/6 flex flex-wrap mx-auto justify-center items-center gap-2">
+          {filter().length ? (
+            filter().map((el, key) => {
+              return (
+                <div className="bg-white p-4 h-96 shadow-md border border-gray-200 rounded-lg max-w-xs m-5 flex flex-col items-center ">
+                  <div className="w-full h-36 mb-5">
+                    <img
+                      src={HospitalImage}
+                      alt=""
+                      className="object-center w-full h-fullrounded-xl "
+                    />
+                  </div>
+                  <div className="p-4 flex items-center flex-col">
+                    <h5 className="text-gray-900 font-bold text-center text-md tracking-tight mb-2">
+                      {el.name}
+                    </h5>
+                    <p className="font-normal text-sm text-gray-700 mb-3 text-center">
+                      {el.address}
+                    </p>
+                    <p className="font-normal text-green-700 font-bold mb-3 p-2 text-center">
+                      {" "}
+                      {el.phone}
+                    </p>
+                  </div>
                 </div>
-                <div className="p-4 flex items-center flex-col">
-                  <h5 className="text-gray-900 font-bold text-center text-md tracking-tight mb-2">
-                    {el.name}
-                  </h5>
-                  <p className="font-normal text-sm text-gray-700 mb-3 text-center">
-                    {el.address}
-                  </p>
-                  <p className="font-normal text-green-700 font-bold mb-3 p-2 text-center">
-                    {" "}
-                    {el.phone}
-                  </p>
-                </div>
-              </div>
-            );
-          })
-        ) : (
-          <img className="mb-10 w-2/3 rounded-xl" src={not_found} alt="" />
-        )}
+              );
+            })
+          ) : (
+            <img className="mb-10 w-2/3 rounded-xl" src={not_found} alt="" />
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 export default Hospital;
