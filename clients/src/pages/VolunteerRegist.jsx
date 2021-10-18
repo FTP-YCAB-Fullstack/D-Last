@@ -30,34 +30,78 @@ function VolunteerRegist() {
 
     return (
         <div>
-            <div className="relative items-center justify-center">
-                <h1 className="text-center text-2xl mb-8 font-bold p-4">Daftar Ajuan Volunteer</h1>
-                <div className="flex flex-wrap items-center container mx-auto my-auto">
-
-                    {unapproved.map((el,key) => {
-                        return (
-                            <div key={key} className="max-w-md mx-auto">
-                                <div className="bg-white shadow-md border border-gray-200 rounded-lg max-w-xs mb-5">
-                                        <img className="rounded-t-lg h-64 p-3 w-screen" src={`http://localhost:5000/${el.pas_foto}`}  alt=""/>
-                                        <div className="p-5 flex items-center flex-col">
-                                            <h5 className="text-gray-900 font-bold text-center text-xl tracking-tight mb-2">{el.nama}</h5>
-                                            <p className="font-normal text-gray-700 mb-3">{el.domisili}</p>
-                                            <a onClick={() => cardData(el)}
-                                                className="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center">
-                                                Read more
-                                            </a>
+            <div className="relative flex flex-col items-center justify-center">
+                <h1 className="text-center text-3xl mb-8 mt-10 font-bold text-green-700 p-4">DAFTAR PENGAJUAN VOLUNTEER</h1>
+                <div className="w-full ml-10">
+                    <button className="text-center shadow-lg mb-10 bg-white shadow-4 hover:bg-green-500 focus:shadow-outline focus:outline-none text-green-700 font-bold py-2 px-4 rounded" onClick={back}>🡸 kembali</button>
+                </div>
+                <div className="flex flex-wrap justify-center items-center container mx-auto my-auto t-0 mb-10">
+                    <div  class="py-1 t-0 bg-blueGray-50 flex justify-center w-full h-full">
+                        <div class="w-full h-full t-0 flex justify-center items-center mb-12 xl:mb-0 px-4 mx-auto ">
+                            <div class=" flex flex-col min-w-0 break-words bg-white w-full h-full shadow-lg rounded ">
+                                <div class="rounded-t mb-0 px-4 py-3 border-0">
+                                    <div class="flex flex-wrap items-center">
+                                        <div class="relative w-full px-4 max-w-full flex-grow flex-1">
+                                            <h3 class="font-semibold text-base text-blueGray-700">Volunteer Form Preview</h3>
                                         </div>
+                                    </div>
                                 </div>
-                                {open && <VolunteerRegistInfo {...dataCard} close={setOpen}/>}
-                            </div>
-                        )
-                    })}
-                    
+                                <div class="block w-full overflow-x-auto">
+                                    <table class="items-center bg-white w-full border-collapse ">
+                                        <thead class="bg-green-500 text-white">
+                                            <tr>
+                                            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                            Nama
+                                            </th>
+                                            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                             Email
+                                            </th>
+                                            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                            Tanggal Pengajuan
+                                            </th>
+                                            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                            Status
+                                            </th>
+                                            <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
+                                            Lihat Form
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    {unapproved.map((el,key) => {
+                                            return (
+                                                <tbody key={key}>
+                                                <tr>
+                                                    <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700 ">
+                                                    {el.nama}
+                                                    </th>
+                                                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 ">
+                                                    {el.email}
+                                                    </td>
+                                                    <td class="border-t-0 px-6 align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                                    {el.createdAt.slice(0,15)}
+                                                    </td>
+                                                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                                    <i class="text-emerald-500 mr-4"></i>
+                                                    {el.status}
+                                                    </td>
+                                                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                                                        <button onClick={() => cardData(el)} class="text-gray-100 w-full rounded-sm my-5 ml-2 focus:outline-none bg-yellow-600 p-1">
+                                                            DETAIL
+                                                        </button>
+                                                        {open && <VolunteerRegistInfo {...dataCard} close={setOpen}/>}
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        )
+                                    })}
+                             </table>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <button className="text-center shadow bg-blue-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" onClick={back}>BACK</button>
         </div>
+    </div>
+</div>
     )
 }
 
