@@ -35,10 +35,10 @@ function Hospital() {
     <>
       <NavBar />
       <div className="w-full h-full flex items-center flex-col">
-        <div className="mt-10 bg-white items-center justify-between w-11/12 md:w-2/3 flex rounded-full shadow-lg p-2 mb-5 sticky">
+        <div className="mt-10 bg-white border-2 border-gray-200 items-center justify-between w-2/3  flex rounded-full shadow-lg p-2 mb-5 sticky">
             <input 
             onChange={(e) => setInput(e.target.value)}
-            className="font-bold rounded-full w-full py-4 pl-4 text-gray-700 bg-gray-100 leading-tight focus:outline-none focus:shadow-outline lg:text-sm text-xs" type="text" placeholder="Search"/>
+            className="font-bold rounded-full w-full py-4 pl-4 text-green-800 leading-tight focus:outline-none focus:shadow-outline lg:text-sm text-xs" type="text" placeholder="Cari Berdasarkan Provisi Ya!"/>
         </div>
 
 
