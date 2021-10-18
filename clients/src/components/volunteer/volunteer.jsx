@@ -35,10 +35,7 @@ function Volunteer() {
         <h1 className="block text-green-900 text-3xl font-bold mb-4">
           Mari Bergabung Menjadi Volunteer
         </h1>
-        <div>
-          <h1 className="my-10 bg-red-200 p-4 rounded-xl">VOLUNTEER MEMBER</h1>
-        </div>
-        <div className="flex w-full justify-end">
+        <div className="flex w-full justify-center">
           <button
             onClick={() => setIsOpen(true)}
             className="relative bg-green-500 text-white hover:bg-green-700 w-48 p-4 rounded-full text-md font-bold overflow-visible mb-8"
@@ -46,13 +43,17 @@ function Volunteer() {
             Gabung Volunteer
           </button>
         </div>
+        <div>
+          <h1 className="my-10 bg-red-200 p-4 rounded-xl">VOLUNTEER MEMBER</h1>
+        </div>
+        
         {isOpen && <FormVolunteer close={setIsOpen} />}
-        <div className="volunteer-box w-full bg-red-200 flex flex-wrap items-center justify-center gap-10">
+        <div className="volunteer-box w-full p-3 flex flex-wrap items-center justify-center gap-10">
           {volunteers.map((el, key) => {
             return (
               <div
                 key={key}
-                className="w-56 h-full bg-gray-100 rounded-lg p-8 flex flex-col justify-center items-center "
+                className="w-56 bg-gray-300 shadow-lg rounded-lg p-8 flex flex-col justify-center items-center "
               >
                 <div className="mb-8">
                   <img
@@ -77,12 +78,11 @@ function Volunteer() {
         <h1 className="block text-green-900 text-3xl font-bold mt-10">
           Kegiatan dan Event
         </h1>
-        <h1 className="mt-10 bg-blue-200 p-4 rounded-xl">VOLUNTEER ACTIVITY</h1>
-        <div className="volunteer-box bg-blue-200 p-4 w-full flex flex-wrap items-center justify-center gap-10 mb-10 mt-10 ">
+        <div className="volunteer-box p-4 w-full flex flex-wrap items-center justify-center gap-10 mb-10 mt-10 ">
           {activities.map((el, key) => {
             return (
               <>
-                <div className="w-80 bg-gray-100 rounded-lg p-8 flex flex-col justify-center items-center">
+                <div className="w-80 bg-gray-300 shadow-lg mb-12 rounded-lg p-8 flex flex-col justify-center items-center">
                   <div className="mb-8">
                     <img
                       className="object-center object-cover h-32 w-32"
