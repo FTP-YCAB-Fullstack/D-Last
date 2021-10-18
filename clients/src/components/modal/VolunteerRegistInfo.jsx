@@ -77,8 +77,8 @@ function VolunteerRegistInfo(props) {
                                     pendidikan terakhir : {props.pendidikan_terakhir}
                                 </p>
                             </div>
-                            <div className="flex justify-start items-center my-2">
-                                <p className="dark:text-white text-base lg:w-3/4  text-gray-800 mt-2 mr-2">
+                            <div className="flex justify-start items-center my-2 bg-red-200">
+                                <p className="dark:text-white text-base lg:w-3/4 text-gray-800 mt-2 mr-2">
                                     Visi Misi : {props.visi_misi}
                                 </p>
                             </div>
