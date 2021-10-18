@@ -2,10 +2,12 @@ import axios from 'axios';
 import React, {useState} from 'react';
 import { useSelector } from 'react-redux';
 import Swal from 'sweetalert2'
+import DatePicker from 'react-datepicker'
+import 'react-datepicker/dist/react-datepicker.css'
 import Request from '../../axios_instance';
 
 const FormVolunteer = (props) => {
-    const [ttl, setttl] = useState("")
+    const [ttl, setttl] = useState(null)
     const [domisili, setDomisili] = useState("")
     const [Pendidikan, setPendidikan] = useState("")
     const [visiMisi, setVisiMisi] = useState("")
@@ -73,8 +75,8 @@ const FormVolunteer = (props) => {
                 <h1 className="w-full text-center text-gray-800 text-xl font-bold mb-4">Volunteer Form</h1>
                 <form onSubmit={submit} className="w-full h-full overflow-hidden" method="post">
                     <div className="flex flex-col mb-4">
-                        <label className="mb-2 font-bold text-md text-gray-900" >Tempat, tanggal lahir</label>
-                        <input onChange={(e) => setttl(e.target.value)} className="border py-2 px-3 text-grey-800" type="text"  />
+                        <label className="mb-2 font-bold text-md text-gray-900" >Tanggal Lahir</label>
+                        <DatePicker dateFormat='dd/MM/yyyy' selected={ttl} onChange={date => setttl(date)} showYearDropdown scrollableMonthYearDropdown className="border py-2 px-3 text-grey-800" type="text"  />
                     </div>
                     <div className="flex flex-col mb-4">
                         <label className="mb-2 font-bold text-md text-gray-900">Domisili</label>

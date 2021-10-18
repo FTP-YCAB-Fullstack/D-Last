@@ -64,7 +64,7 @@ function VolunteerRegistInfo(props) {
                             </h2>
                             <div className="flex justify-start items-center my-2">
                                 <p className="dark:text-white text-base lg:w-3/4  text-gray-800">
-                                    Tempat tanggal lahir : {props.ttl}
+                                    Tempat tanggal lahir : {props.ttl.slice(0,15)}
                                 </p>
                             </div>
                             <div className="flex justify-start items-center my-2">
