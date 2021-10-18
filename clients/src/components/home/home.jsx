@@ -1,6 +1,6 @@
 import React from "react";
 import NavBar from "../nav/nav";
-import HeaderPicture from "../images/homeHero.png";
+import HeaderPicture from "../images/Untitled.png";
 
 // import { Link, useHistory } from 'react-router-dom'
 // import axios from "axios"
@@ -10,7 +10,7 @@ function Home() {
   return (
     <div>
       <NavBar />
-      <section className="mt-40 flex container mx-auto">
+      <section className="mt-32 md:flex container mx-auto">
         <div className="text-center w-3/6 p-2 mt-20">
           <h1 className="text-5xl my-2 text-green-500 font-semibold p-4">
             WE LOVE,
@@ -22,10 +22,10 @@ function Home() {
           </h1>
         </div>
         <div className="w-3/6">
-          <img src={HeaderPicture} alt="" width="600" height="600" />
+          <img src={HeaderPicture} alt="" />
         </div>
       </section>
-      <footer className="bg-green-500 h-80 flex items-center justify-center">
+      <footer className="bg-green-500 h-40 flex items-center justify-center">
         <div className="text-center">
           <p className="text-white">&copy; Copyright 2021 D_Last</p>
         </div>

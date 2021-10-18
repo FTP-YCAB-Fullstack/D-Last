@@ -7,67 +7,64 @@ import 'react-datepicker/dist/react-datepicker.css'
 import Request from '../../axios_instance';
 
 const FormVolunteer = (props) => {
-    const [ttl, setttl] = useState(null)
-    const [domisili, setDomisili] = useState("")
-    const [Pendidikan, setPendidikan] = useState("")
-    const [visiMisi, setVisiMisi] = useState("")
-    const [pandangan, setPandangan] = useState("")
-    const [planning, setPlanning] = useState("")
-    const [pasFoto, setpasFoto] = useState("")
+const [ttl, setttl] = useState(null)
+const [domisili, setDomisili] = useState("")
+const [Pendidikan, setPendidikan] = useState("")
+const [visiMisi, setVisiMisi] = useState("")
+const [pandangan, setPandangan] = useState("")
+const [planning, setPlanning] = useState("")
+const [pasFoto, setpasFoto] = useState("")
 
-    const logAs = useSelector(state => state.logAs)
+  const logAs = useSelector((state) => state.logAs);
 
-    console.log(logAs)
+  console.log(logAs);
 
-    const getImg = (e) => {
-        setpasFoto(e.target.files[0])
+  const getImg = (e) => {
+    setpasFoto(e.target.files[0]);
+  };
+
+  const submit = async (e) => {
+    try {
+      e.preventDefault();
+
+      const formData = new FormData();
+
+      formData.append("nama", logAs.username);
+      formData.append("ttl", ttl);
+      formData.append("domisili", domisili);
+      formData.append("pendidikan_terakhir", Pendidikan);
+      formData.append("visi_misi", visiMisi);
+      formData.append("pendapat_mental_health", pandangan);
+      formData.append("rencana_volunteer", planning);
+      formData.append("pas_foto", pasFoto);
+      formData.append("user_id", logAs.UserId);
+      formData.append("email", logAs.email);
+
+      // const data = await axios.post("http://localhost:5000/volunteers",formData)
+      // console.log(logAs)
+      const data = await Request({
+        url: "volunteers",
+        method: "POST",
+        data: formData,
+      });
+      console.log("Success Add Volunteer");
+
+      props.close(false);
+
+      Swal.fire({
+        icon: "success",
+        title: "Pendaftaran Berhasil",
+      });
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Anda sudah tidak bisa mengisi form lagi",
+        text: `Silahkan tunggu 1 minggu,
+                jika nama anda tidak ada di daftar volunteer anda bisa melakukan registrasi ulang`,
+      });
     }
-
-    const submit = async (e) => {
-        try {
-            e.preventDefault()
-
-            const formData = new FormData();
-
-            formData.append("nama",logAs.username)
-            formData.append("ttl",ttl)
-            formData.append("domisili",domisili)
-            formData.append("pendidikan_terakhir",Pendidikan)
-            formData.append("visi_misi",visiMisi)
-            formData.append("pendapat_mental_health",pandangan)
-            formData.append("rencana_volunteer",planning)
-            formData.append("pas_foto",pasFoto)
-            formData.append('user_id',logAs.UserId)
-            formData.append('email',logAs.email)
-
-            // const data = await axios.post("http://localhost:5000/volunteers",formData)
-            // console.log(logAs)
-            const data = await Request({
-                url : 'volunteers',
-                method : 'POST',
-                data : formData
-            })
-            console.log("Success Add Volunteer")
-
-            props.close(false)
-
-            Swal.fire({
-                icon: 'success',
-                title: 'Pendaftaran Berhasil'
-              })
-
-        } catch (error) {
-            Swal.fire({
-                icon: 'error',
-                title: 'Anda sudah tidak bisa mengisi form lagi',
-                text : `Silahkan tunggu 1 minggu,
-                jika nama anda tidak ada di daftar volunteer anda bisa melakukan registrasi ulang`
-              })
-        }
-    }
-
-
-
+  };
+  
     return(
         <div className="modalBg w-full h-full top-0 left-0 bg-opacity-50 bg-black fixed flex justify-center items-center">
             <div className="modalcheck overflow-auto w-full h-full items-center flex flex-col p-4 bg-white">
@@ -113,11 +110,11 @@ const FormVolunteer = (props) => {
                     </div>
                 </form>
             </div>
+          </form>
         </div>
+      </div>
     </div>
-        
-        
-    )
-}
+  );
+};
 
-export default FormVolunteer
+export default FormVolunteer;
