@@ -56,8 +56,8 @@ function VolunteerRegistInfo(props) {
                     </div>
                     
                     <div className="top p-2 gap-x-2 flex">
-                        <div className="img w-1/3 h-72">
-                            <img className="w-full h-full" src={`http://localhost:5000/${props.pas_foto}`} alt="..." />
+                        <div className="img w-2/5 bg-red-200 flex justify-center items-center">
+                            <img className="w-1/2" src={`http://localhost:5000/${props.pas_foto}`} alt="..." />
                         </div>
                         <div className="info w-1/2">
                             <div className="nama">
