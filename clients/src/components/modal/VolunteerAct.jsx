@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Request from '../../axios_instance'
+import Swal from 'sweetalert2';
 
 function VolunteerAct(props) {
 
@@ -15,6 +16,14 @@ function VolunteerAct(props) {
         try {
             e.preventDefault()
 
+            if(nama_kegiatan.length === 0 || deskripsi.length === 0 || thumbnail.length === 0){
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Harap Isi semua form',
+                  })
+                return
+            }
+
             const formData = new FormData();
 
             formData.append("nama_kegiatan",nama_kegiatan)
@@ -26,7 +35,11 @@ function VolunteerAct(props) {
                 url : 'activities',
                 data : formData
             })
-            console.log("Success Add Stories")
+
+            Swal.fire({
+                icon: 'success',
+                title: 'Acara sudah di posting',
+              })
 
             props.close(false)
 
@@ -69,7 +82,7 @@ function VolunteerAct(props) {
                     </div>
 
                     <div className="md:flex md:items-center">
-                        <div className="md:w-1/3">
+                        <div className="md:w-1/3 flex gap-x-2">
                         <input type="submit" value="Kirim" className="shadow bg-green-600 mr-12 hover:bg-green-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" />
                         <button onClick={() => props.close(false)} className="shadow bg-red-400 hover:bg-red-300 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
                             Batal
