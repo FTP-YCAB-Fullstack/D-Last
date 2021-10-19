@@ -1,7 +1,26 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {Link, useParams,useHistory} from 'react-router-dom'
+import Request from '../../axios_instance'
 
 function Email_Verif() {
+
+    const {token} = useParams()
+    const history = useHistory()
+
+    const verified = async () => {
+        try{
+            const isVerif = await Request({
+                method:'GET',
+                url: `users/verify-email?token=${token}`,
+            })
+
+            if(isVerif.data.message === `User is verified`){
+                history.push('/login')
+            }
+        }catch(error){
+            console.log(error)
+        }
+    }
 
     return (
         <body>
@@ -15,8 +34,10 @@ function Email_Verif() {
 
                 <p>Kami senang kamu disini. Email mu sudah diverifikasi ya!</p>
                 <div className="mt-4">
-                    <button className="px-2 py-2 text-white bg-green-600 rounded hover:bg-green-500">
-                        <Link to='/login'>Klik disini untuk Masuk</Link>
+                    <button 
+                    onClick={verified}
+                    className="px-2 py-2 text-white bg-green-600 rounded hover:bg-green-500">
+                        Verify
                     </button>
                 </div>
             </div>
