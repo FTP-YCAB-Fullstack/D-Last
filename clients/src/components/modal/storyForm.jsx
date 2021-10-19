@@ -20,6 +20,14 @@ const FormStory = (props) => {
         try {
             e.preventDefault()
 
+            if(judul.length === 0 || penulis.length === 0 || deskripsi.length === 0){
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Harap Isi semua form',
+                  })
+                return
+            }
+
             const formData = new FormData();
 
             formData.append("judul",judul)
@@ -38,7 +46,6 @@ const FormStory = (props) => {
                 data : formData
 
             })
-
 
             Swal.fire({
                 icon: 'success',
