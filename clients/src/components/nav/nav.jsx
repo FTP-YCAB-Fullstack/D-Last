@@ -2,10 +2,12 @@ import React, { useState } from 'react'
 import {Nav, NavLink, Bars, NavBtn, BtnLink, BtnOut} from './navbarStyle'
 import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
+import { useHistory } from 'react-router-dom'
 
 function NavBar () {
     const [isOpen, setIsOpen] = useState(false)
     const dispatch = useDispatch()
+    const history = useHistory()
 
     const token = localStorage.getItem('token');
 
@@ -29,6 +31,7 @@ function NavBar () {
 
       localStorage.removeItem("token");
       localStorage.removeItem("authAs");
+      history.push('/')
     }
 
     
