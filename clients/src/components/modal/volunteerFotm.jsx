@@ -1,4 +1,3 @@
-import axios from 'axios';
 import React, {useState} from 'react';
 import { useSelector } from 'react-redux';
 import Swal from 'sweetalert2'
@@ -67,7 +66,7 @@ const [pasFoto, setpasFoto] = useState("")
   
     return(
         <div className="modalBg w-full h-full top-0 left-0 bg-opacity-50 bg-black fixed flex justify-center items-center">
-            <div className="modalcheck overflow-auto w-full h-full items-center flex flex-col p-4 bg-white">
+            <div className="modalcheck overflow-y-scroll w-full h-full items-center flex flex-col p-4 bg-white">
             <div className="w-3/4 t-0 mb-8 rounded shadow-2xl p-5 ">
                 <h1 className="w-full text-center text-gray-800 text-xl font-bold mb-4">Volunteer Form</h1>
                 <form onSubmit={submit} className="w-full h-full overflow-hidden" method="post">

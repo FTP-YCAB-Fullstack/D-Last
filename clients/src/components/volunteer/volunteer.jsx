@@ -28,11 +28,11 @@ function Volunteer() {
   };
 
   return (
-    <div>
+    <div >
       <NavBar />
 
       <div className="volunteer w-full h-screen flex flex-col items-center p-10 px-4 sm:px-6 lg:px-4 py-12">
-        <h1 className="block text-green-900 text-3xl font-bold mb-4">
+        <h1 className="block text-green-900 text-3xl font-bold mb-10">
           Mari Bergabung Menjadi Volunteer
         </h1>
         <div className="flex w-full justify-center">
@@ -44,7 +44,9 @@ function Volunteer() {
           </button>
         </div>
         <div>
-          <h1 className="my-10 bg-red-200 p-4 rounded-xl">VOLUNTEER MEMBER</h1>
+        <h1 className="block text-green-900 text-3xl font-bold mt-10 mb-5">
+          Tim Volunteer
+        </h1>
         </div>
         
         {isOpen && <FormVolunteer close={setIsOpen} />}
@@ -53,7 +55,7 @@ function Volunteer() {
             return (
               <div
                 key={key}
-                className="w-56 bg-gray-300 shadow-lg rounded-lg p-8 flex flex-col justify-center items-center "
+                className="w-56 bg-gray-200 shadow-lg rounded-lg p-8 flex flex-col justify-center items-center "
               >
                 <div className="mb-8">
                   <img
@@ -66,7 +68,7 @@ function Volunteer() {
                   <p className="text-xl text-gray-700 font-bold mb-2">
                     {el.nama}
                   </p>
-                  <p className="text-base text-gray-400 font-normal">
+                  <p className="text-base text-blueGray-200 font-normal">
                     {el.domisili}
                   </p>
                 </div>
@@ -75,14 +77,14 @@ function Volunteer() {
           })}
         </div>
 
-        <h1 className="block text-green-900 text-3xl font-bold mt-10">
+        <h1 className="block text-green-900 text-3xl font-bold mt-16">
           Kegiatan dan Event
         </h1>
-        <div className="volunteer-box p-4 w-full flex flex-wrap items-center justify-center gap-10 mb-10 mt-10 ">
+        <div className="volunteer-box p-4 w-full flex flex-wrap items-center justify-center gap-10 mb-10 mt-5 ">
           {activities.map((el, key) => {
             return (
               <>
-                <div className="w-80 bg-gray-300 shadow-lg mb-12 rounded-lg p-8 flex flex-col justify-center items-center">
+                <div className="w-80 bg-gray-200 shadow-lg mb-12 rounded-lg p-8 flex flex-col justify-center items-center">
                   <div className="mb-8">
                     <img
                       className="object-center object-cover h-32 w-32"

@@ -1,12 +1,10 @@
 import React, { useState } from 'react'
 import {Nav, NavLink, Bars, NavBtn, BtnLink, BtnOut} from './navbarStyle'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
 
 function NavBar () {
     const [isOpen, setIsOpen] = useState(false)
-    const logAs = useSelector(state => state.logAs)
-    const isLogin = useSelector(state => state.isLogin)
     const dispatch = useDispatch()
 
     const token = localStorage.getItem('token');
@@ -36,27 +34,24 @@ function NavBar () {
     
     return (
         <div className= "block">
-            <Nav>
+            <Nav className="font-bold">
                 <Bars onClick={() => setIsOpen(!isOpen)}>
                 </Bars>
                 <Menu isOpen={isOpen}>
                     <NavLink to='/'activeStyle >
-                        home
+                    <i className="fas fa-house-user fa-xl"></i>
                     </NavLink>
                     <NavLink to='/volunteer' activeStyle>
-                        volunteer
+                        VOLUNTEER
                     </NavLink>
                     <NavLink to='/cerita' activeStyle>
-                        cerita
+                        CERITA
                     </NavLink>
                     <NavLink to='/rumah-sakit' activeStyle>
-                        rumah sakit
+                        RUMAH SAKIT
                     </NavLink>
-                    {/* <NavLink>
-                        layanan
-                    </NavLink> */}
                     <NavLink to='/health-condition' activeStyle>
-                        kondisi
+                        KONDISI
                     </NavLink>
                 </Menu>
 

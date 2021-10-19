@@ -15,6 +15,7 @@ import VolunteerPage from "./pages/VolunteerPage";
 import Private from "./routes/Private";
 import ConditionPage from "./pages/ConditionPage"
 import VolunteerRegist from "./pages/VolunteerRegist";
+import VerifPage from "./pages/verifPage";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Switch>
         <OnlyPublic path="/login" exact component={LoginPage}/>
         <OnlyPublic path="/register" exact component={RegisterPage}/>
+        <OnlyPublic path="/success" exact component={VerifPage}/>
         <Private path='/cerita' exact component={CeritaPage}/>
         <Route path='/rumah-sakit' exact component={HospitalPage}/>
         <Route path='/health-condition' exact component={ConditionPage}/>

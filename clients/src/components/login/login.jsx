@@ -1,7 +1,6 @@
-import React, { useState,useEffect } from "react";
-import { Link, Redirect, useHistory } from "react-router-dom";
-import axios from "axios";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState} from "react";
+import { Link, useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import Swal from "sweetalert2";
 import Request from "../../axios_instance";
 
@@ -9,8 +8,6 @@ function Login() {
     const history = useHistory()
     const [email,setEmail] = useState("")
     const [password,setPassword] = useState("")
-
-    const logAs = useSelector(state => state.logAs)
     const dispatch = useDispatch()
 
     const submited = async (e) => {
