@@ -88,21 +88,23 @@ let healthyController = {
     }
   },
 
-  deleteById: async (req, res) => {
+  deleteById: async (req, res,next) => {
     try {
       const { id } = req.params;
-      const data = await Healthy.deleteOne(id);
+      const isExist = await Healthy.findById(id)
 
-      data.destroy();
-      res.status(200).json({
-        message: "success",
-      });
-    } catch (error) {
-      if (!data) {
-        res.status(404).json({
-          message: "data not found",
-        });
+      if(!isExist){
+          next({code:404,message:"Condition Not Found"})
+          return
       }
+
+      const deleted = await Healthy.findByIdAndDelete(id)
+
+      res.status(200).json({
+        message : "Health Condition Deleted"
+      })
+    } catch (error) {
+      next({code:500, message:"Internal Server Error"})
     }
   },
 };

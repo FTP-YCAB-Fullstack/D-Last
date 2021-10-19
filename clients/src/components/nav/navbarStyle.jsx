@@ -38,7 +38,7 @@ flex-direction: column;
     display: flex;
     position: absolute;
     top: 1rem;
-    right: 20px;
+    right: 7px;
     transform: translate(-100, 75%);
     font-size: 2rem;
     cursor: pointer
@@ -47,7 +47,7 @@ flex-direction: column;
 export const NavBtn = styled.nav`
 display: flex;
 align-items: center;
-margin-right: 24px;
+margin-right: 12px;
 color: #fff;
 `
 export const BtnLink = styled(Link)`
@@ -73,13 +73,11 @@ export const BtnOut = styled.button`
 border-radius: 4px;
 background: #3A9CA3;
 padding: 5px 15px;
-margin-right: 50px;
 color: #fff;
 border: none;
 cursor: pointer;
 transition: all 0.2s ease-in-out;
 text-decoration: none;
-margin-left : 2rem;
 
 &:hover{
     transition: all 0.2s ease-in-out;

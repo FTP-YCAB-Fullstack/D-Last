@@ -93,13 +93,14 @@ function VolunteerRegist() {
                                                         <button onClick={() => cardData(el)} className="text-gray-100 w-full rounded-sm my-5 ml-2 focus:outline-none bg-yellow-600 p-1">
                                                             DETAIL
                                                         </button>
-                                                        {open && <VolunteerRegistInfo {...dataCard} close={setOpen}/>}
+                                                        
                                                     </td>
                                                 </tr>
                                             </tbody>
                                         )
                                     })}
                              </table>
+                            {open && <VolunteerRegistInfo {...dataCard} close={setOpen}/>}
                         </div>
                     </div>
                 </div>

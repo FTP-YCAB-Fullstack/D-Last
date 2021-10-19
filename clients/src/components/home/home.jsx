@@ -15,17 +15,17 @@ function Home() {
 <section className="relative opacity-100 bg-black">
 <div className="relative pt-16 pb-32 flex content-center items-center justify-center min-h-screen-75">
         <div className="absolute top-0 w-full h-full bg-center bg-cover" >
-            <img src={homePic} alt="" />
+            <img className="filter brightness-75" src={homePic} alt="" />
           <span className="w-full absolute opacity-75 bg-black"></span>
         </div>
         <div className="container relative mx-auto">
           <div className="items-center flex flex-wrap">
             <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
-              <div className="pr-12">
+              <div className="filter drop-shadow-lg pr-12">
                 <h1 className="text-white font-semibold text-5xl mb-10">
                   WE LOVE, WE WALK TOGETHER
                 </h1>
-                <p className="mt-4 text-lg text-gray-100">
+                <p className="filter drop-shadow mt-4 text-lg text-gray-100">
                 "Let your story go. Allow <br /> yourself to be present <br /> with
                  who you are right <br /> now.” – Russ Kyle
                 </p>
