@@ -39,7 +39,7 @@ let userController = {
         nama: nama,
         email: email,
         password: bcrypt.hashSync(password, 8),
-        role: "admin",
+        role: "user",
         emailToken : crypto.randomBytes(64).toString('hex'),
         isVerified : false
       };
