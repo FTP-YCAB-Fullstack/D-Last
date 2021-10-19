@@ -20,11 +20,11 @@ function ActivitiesModal(props) {
                 src={`http://localhost:5000/${props.thumbnail}`}
                 alt="photo"
               />
-              <div className="w-full flex flex-col flex-wrap text-center bg-gray-200 rounded-lg">
-                <p className="text-3xl text-gray-700 font-bold mb-6 ">
+              <div className="w-full flex flex-col flex-wrap text-center rounded-lg">
+                <p className="text-3xl text-gray-900 font-bold mb-6 ">
                   {props.nama_kegiatan}
                 </p>
-                <p className="text-gray-400 leading-loose font-normal text-base ">
+                <p className="text-gray-900 leading-loose font-normal text-base mb-10 ">
                   {props.deskripsi}
                 </p>
               </div>
