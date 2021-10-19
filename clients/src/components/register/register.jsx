@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, {useState } from "react";
 import { useHistory } from "react-router-dom";
 import Swal from "sweetalert2";
 import Request from "../../axios_instance";

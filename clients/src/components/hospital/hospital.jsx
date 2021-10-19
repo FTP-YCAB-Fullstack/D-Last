@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import getApi from "../../redux/action";
 import HospitalImage from "../images/hospital.jpg";
 import not_found from "../images/not_found.png";
-import { ImSearch } from "react-icons";
 
 function Hospital() {
   const [input, setInput] = useState("");
@@ -35,6 +34,9 @@ function Hospital() {
     <>
       <NavBar />
       <div className="w-full h-full flex items-center flex-col">
+      <h1 className="block text-green-900 text-3xl font-bold mb-5 mt-16">
+          Cari Rumah Sakit di Daerah Mu
+        </h1>
         <div className="mt-10 bg-white border-2 border-gray-200 items-center justify-between w-2/3  flex rounded-full shadow-lg p-2 mb-5 sticky">
             <input 
             onChange={(e) => setInput(e.target.value)}

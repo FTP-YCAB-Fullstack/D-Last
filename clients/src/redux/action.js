@@ -1,4 +1,3 @@
-import axios from "axios"
 import Request from "../axios_instance"
 
 const getApi = (section) => {

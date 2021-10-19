@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useDispatch } from 'react-redux'
 import Request from '../../axios_instance'
 import getApi from '../../redux/action'
