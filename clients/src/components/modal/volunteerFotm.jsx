@@ -16,8 +16,6 @@ const [pasFoto, setpasFoto] = useState("")
 
   const logAs = useSelector((state) => state.logAs);
 
-  console.log(logAs);
-
   const getImg = (e) => {
     setpasFoto(e.target.files[0]);
   };
@@ -25,6 +23,15 @@ const [pasFoto, setpasFoto] = useState("")
   const submit = async (e) => {
     try {
       e.preventDefault();
+
+      if(domisili.length === 0 || Pendidikan.length === 0 || visiMisi.length === 0 || pandangan.length === 0 || planning.length === 0 || pasFoto.length === 0){
+        Swal.fire({
+          icon: "error",
+          title: "Harap isi semua form",
+        });
+
+        return 
+      }
 
       const formData = new FormData();
 

@@ -21,7 +21,6 @@ function Volunteer() {
 
   useEffect(() => {
     dispatch(getApi("activities"));
-    console.log(activities);
   }, []);
 
   const cardData = (el) => {

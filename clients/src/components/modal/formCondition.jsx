@@ -22,6 +22,14 @@ const FormCondition = (props) => {
         try {
             e.preventDefault()
 
+            if(judul.length === 0 || pengertian.length === 0 || ciri.length === 0 || penanggulangan === 0 || credit.length === 0 || thumbnail.length === 0){
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Harap Isi semua form',
+                  })
+                return
+            }
+
             const formData = new FormData();
 
             formData.append("judul",judul)
@@ -51,9 +59,6 @@ const FormCondition = (props) => {
             dispatch(getApi('condition'))
 
             props.close(false)
-
-            
-
         } catch (error) {
             console.log(error)
         }
@@ -78,7 +83,7 @@ const FormCondition = (props) => {
                         <label className="block uppercase tracking-wide text-white text-xs font-bold mb-2" >
                             Pengertian
                         </label>
-                        <textarea onChange={(e) => setPengertian(e.target.value)} className=" no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-200 focus:border-gray-500 h-48 resize-none" id="message"></textarea>
+                        <textarea onChange={(e) => setPengertian(e.target.value)} className=" no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-200 focus:border-gray-500 h-48 resize-none"></textarea>
 
                         </div>
                     </div>
@@ -88,7 +93,7 @@ const FormCondition = (props) => {
                         <label  className="block uppercase tracking-wide text-white text-xs font-bold mb-2" >
                             Ciri - Ciri
                         </label>
-                        <textarea onChange={(e) => setCiri(e.target.value)} className=" no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-200 focus:border-gray-500 h-48 resize-none" id="message"></textarea>
+                        <textarea onChange={(e) => setCiri(e.target.value)} className=" no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-200 focus:border-gray-500 h-48 resize-none"></textarea>
 
                         </div>
                     </div>
@@ -98,7 +103,7 @@ const FormCondition = (props) => {
                         <label  className="block uppercase tracking-wide text-white text-xs font-bold mb-2" >
                             Cara mengatasi
                         </label>
-                        <textarea onChange={(e) => setPenanggulangan(e.target.value)} className=" no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-200 focus:border-gray-500 h-48 resize-none" id="message"></textarea>
+                        <textarea onChange={(e) => setPenanggulangan(e.target.value)} className=" no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-200 focus:border-gray-500 h-48 resize-none"></textarea>
 
                         </div>
                     </div>
@@ -123,7 +128,7 @@ const FormCondition = (props) => {
                     </div>
 
                     <div className="md:flex md:items-center">
-                        <div className="md:w-1/3">
+                        <div className="md:w-1/3 flex gap-x-2">
                         <input type="submit" value="Kirim" className="shadow bg-blue-600 mr-12 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" />
                         <button onClick={() => props.close(false)} className="shadow bg-red-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
                             Batal
