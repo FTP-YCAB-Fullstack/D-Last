@@ -16,8 +16,6 @@ const [pasFoto, setpasFoto] = useState("")
 
   const logAs = useSelector((state) => state.logAs);
 
-  console.log(logAs);
-
   const getImg = (e) => {
     setpasFoto(e.target.files[0]);
   };
