@@ -75,7 +75,7 @@ function Cerita() {
                       <div className="Btn flex gap-x-3 w-full justify-center">
                         <button
                           onClick={() => cardData(el)}
-                          className="text-white w-1/3 bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center"
+                          className="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center"
                         >
                           Read more
                         </button>
@@ -83,7 +83,7 @@ function Cerita() {
                         {authAs === "admin" ? (
                           <button
                             onClick={() => deleteStory(el._id)}
-                            className="text-white w-1/4 bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 inline-flex items-center"
+                            className="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 inline-flex items-center"
                           >
                             Hapus
                           </button>
@@ -98,12 +98,12 @@ function Cerita() {
           })}
         </div>
         <div className="w-full flex justify-center">
-          <div class="m-6 space-y-3 w-72 bg-green-700 ">
+          <div class="m-6 space-y-3 w-72">
             <button
               onClick={() => setOpenForm(true)}
               class="block rounded-full py-3 px-6 w-full px-6 py-2 text-xs font-medium leading-6 text-center text-white uppercase transition bg-green-700 rounded shadow ripple hover:shadow-lg hover:bg-green-800 focus:outline-none"
             >
-              Buat Cerita Disini!
+              Buat Cerita Mu Disini!
             </button>
           </div>
         </div>

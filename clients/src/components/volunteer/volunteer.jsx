@@ -13,6 +13,8 @@ function Volunteer() {
   const dispatch = useDispatch();
   const [openAct, setOpenAct] = useState(false);
 
+  const authAs = localStorage.getItem("authAs")
+
   useEffect(() => {
     dispatch(getApi("approved"));
   }, []);
@@ -36,12 +38,13 @@ function Volunteer() {
           Mari Bergabung Menjadi Volunteer
         </h1>
         <div className="flex w-full justify-center">
-          <button
+          {authAs === 'admin' ? null : <button
             onClick={() => setIsOpen(true)}
             className="relative bg-green-500 text-white hover:bg-green-700 w-48 p-4 rounded-full text-md font-bold overflow-visible mb-8"
           >
             Gabung Volunteer
-          </button>
+          </button>}
+          
         </div>
         <div>
         <h1 className="block text-green-900 text-3xl font-bold mt-10 mb-5">

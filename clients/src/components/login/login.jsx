@@ -101,7 +101,7 @@ function Login() {
                             <Link to="/register">Daftar disini</Link>
                         </div>
                         <div className="px-4 pb-2 pt-4">
-                            <input type="submit" value="Login" className="uppercase block w-full p-4 text-lg rounded-full bg-blue-300 hover:bg-blue-500 focus:outline-none"/>
+                            <input type="submit" value="Login" className="uppercase block w-full p-4 text-lg rounded-full bg-blue-500 hover:bg-blue-700 focus:outline-none"/>
                         </div>
                     </form>
                 </div>

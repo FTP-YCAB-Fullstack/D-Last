@@ -10,6 +10,7 @@ function NavBar () {
     const history = useHistory()
 
     const token = localStorage.getItem('token');
+    const auth = localStorage.getItem('authAs');
 
     const Menu = styled.div`
     display: flex;
@@ -56,11 +57,11 @@ function NavBar () {
                     <NavLink to='/health-condition' activeStyle>
                         KONDISI
                     </NavLink>
+                    
                 </Menu>
 
                 {token ? 
                 <NavBtn>
-                      <h1>Selamat Datang</h1> 
                      <NavLink to='/'>
                         <BtnOut onClick={logout}>
                             Keluar
@@ -78,6 +79,16 @@ function NavBar () {
                     </BtnLink>
                 </NavBtn>
                 }
+                {auth === 'admin' ? <NavBtn>
+                    <NavLink to='/admin'>
+                        <BtnOut>
+                            Admin Menu
+                        </BtnOut>
+                    </NavLink>
+                </NavBtn>
+                :
+                null}
+                
             </Nav>
         </div>
     )}

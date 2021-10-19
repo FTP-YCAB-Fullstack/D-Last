@@ -32,11 +32,11 @@ function Email_Verif() {
                     </i>
                 </div>
 
-                <p>Kami senang kamu disini. Email mu sudah diverifikasi ya!</p>
+                <p>Kami senang kamu disini. Klik tombol dibawah untuk untuk verifikasi</p>
                 <div className="mt-4">
                     <button 
                     onClick={verified}
-                    className="px-2 py-2 text-white bg-green-600 rounded hover:bg-green-500">
+                    className="px-2 w-24 py-2 text-white bg-green-600 rounded hover:bg-green-500">
                         Verify
                     </button>
                 </div>

@@ -25,6 +25,11 @@ function Register() {
             }
 
             let health = await Request.post("register",data)
+            Swal.fire({
+                icon: 'success',
+                title: 'Check your email',
+                text: `Untuk login harap verifikasi email anda terlebih dahulu`,
+              })
             
             history.push('/login')
         } catch (error) {

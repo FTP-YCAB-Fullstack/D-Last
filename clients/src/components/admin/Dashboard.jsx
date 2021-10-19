@@ -30,9 +30,16 @@ function Dashboard() {
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 py-12">
         <div className="text-center pb-12">
           {token ? (
+            <div className="flex justify-between w-full">
             <NavBtn>
-              <BtnOut onClick={logout}>Keluar</BtnOut>
+              <BtnOut className="w-32" onClick={logout}>Keluar</BtnOut>
             </NavBtn>
+
+            <NavBtn>
+              <BtnOut className="w-32" onClick={() => history.push('/')}>Home</BtnOut>
+            </NavBtn>
+            </div>
+            
           ) : null}
           <h2 className="text-base font-bold text-indigo-600">
             We Love, We Care
