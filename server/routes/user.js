@@ -6,4 +6,5 @@ const authorization = require("../middlewares/authorization")
 userRoute.get("/users",userController.getAll)
 userRoute.post("/register",userController.regist)
 userRoute.post("/login",userController.login)
+userRoute.get("/users/verify-email",userController.verif)
 module.exports = userRoute

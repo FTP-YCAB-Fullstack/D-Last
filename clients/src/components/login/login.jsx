@@ -52,7 +52,7 @@ function Login() {
             //     title: 'Login Success',
             //   })
 
-            if(email === "admin123@gmail.com"){
+            if(email === "dlastline003@gmail.com"){
                 history.push("/admin");
             } else {
                 history.push("/");
