@@ -56,21 +56,21 @@ function VolunteerRegistInfo(props) {
                     </div>
                     
                     <div className="top p-2 gap-x-2 flex">
-                        <div className="img w-1/3 h-72">
+                        <div className="img w-1/4 xs:h-24 h-52 bg-red-200 flex justify-center items-center">
                             <img className="w-full h-full" src={`http://localhost:5000/${props.pas_foto}`} alt="..." />
                         </div>
-                        <div className="info w-1/2">
-                            <div className="nama">
-                                <p>Nama : {props.nama}</p>
+                        <div className="info w-1/2 ml-10 ">
+                            <h2 className="dark:text-white font-bold text-lg lg:text-2xl my-2 mb-10 ">
+                            Form Pengajuan Volunteer {props.nama}
+                            </h2>
+                            <div className="nama mb-2">
+                                <p><span className="font-bold text-gray-600"> Tempat tanggal lahir : </span> {props.ttl.slice(0,15)}</p>
+                            </div>
+                            <div className="nama mb-2">
+                                <p><span className="font-bold text-gray-600"> Domisili : </span> {props.domisili}</p>
                             </div>
                             <div className="nama">
-                                <p>Tangal Lahir : {props.ttl}</p>
-                            </div>
-                            <div className="nama">
-                                <p>Domisili : {props.domisili}</p>
-                            </div>
-                            <div className="nama">
-                                <p>Pendidikan Terakhir : {props.pendidikan_terakhir}</p>
+                                <p><span className="font-bold text-gray-600"> Pendidikan terakhir : </span> {props.pendidikan_terakhir}</p>
                             </div>
                         </div>
                     </div>
@@ -78,18 +78,22 @@ function VolunteerRegistInfo(props) {
                     <div className="bot p-2">
                         <div className="info">
                             <div className="alasan">
-                                <p>Alasan</p>
-                                <p>{props.visi_misi}</p>
+                                <p className="font-bold text-gray-600 mb-3">Alasan ingin bergabung :</p>
+                                <p className="mb-5"> {props.visi_misi}</p>
                             </div>
-                            <div className="rencana">
-                                <p>Rencana</p>
-                                <p>{props.rencana_volunteer}</p>
+                            <div className="rencana ">
+                                <p className="font-bold text-gray-600 mb-3">Rencana volunteer:</p>
+                                <p className="mb-5">{props.rencana_volunteer}</p>
                             </div>
                             <div className="pendapat">
-                                <p>Pendapat</p>
-                                <p>{props.pendapat_mental_health}</p>
+                                <p className="font-bold text-gray-600 mb-3">Pendapat tentang health:</p>
+                                <p className="mb-5">{props.pendapat_mental_health}</p>
                             </div>
                         </div>
+                        <button onClick={Accept}
+                                    className="shadow bg-blue-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded mt-5 mr-4">TERIMA</button>
+                            <button onClick={Reject}
+                                    className="shadow bg-red-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded mt-5 ml-4">TOLAK</button>
                     </div>
                 </div>
         </div>
