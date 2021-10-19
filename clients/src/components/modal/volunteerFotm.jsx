@@ -26,6 +26,15 @@ const [pasFoto, setpasFoto] = useState("")
     try {
       e.preventDefault();
 
+      if(domisili.length === 0 || Pendidikan.length === 0 || visiMisi.length === 0 || pandangan.length === 0 || planning.length === 0 || pasFoto.length === 0){
+        Swal.fire({
+          icon: "error",
+          title: "Harap isi semua form",
+        });
+
+        return 
+      }
+
       const formData = new FormData();
 
       formData.append("nama", logAs.username);

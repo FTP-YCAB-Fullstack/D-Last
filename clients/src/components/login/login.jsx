@@ -38,7 +38,6 @@ function Login() {
             });
 
             localStorage.setItem('authAs', login.data.data.role)
-            console.log(login.data.data)
 
             await dispatch({
                 type : "LOGGING",
