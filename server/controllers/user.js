@@ -76,7 +76,7 @@ let userController = {
         subject : 'Dlast Project -verify your email',
         html: `<h2> Hello ${payload.nama}! Thank you for registering on our site </h2>
                 <h4> Please verify your email to continue... </h4>
-                <a href="${process.env.FRONT_END}/success/${payload.emailToken}">Verify Your Email</a>
+                <a href="dlast.netlify.app/${payload.emailToken}">Verify Your Email</a>
         `
       }
 
