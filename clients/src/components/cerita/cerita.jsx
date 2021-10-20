@@ -58,7 +58,7 @@ function Cerita() {
                   <div className="bg-white shadow-md border border-gray-200 rounded-lg max-w-xs mb-5">
                     <img
                       className="rounded-t-lg h-52 w-screen"
-                      src={`http://localhost:5000/${el.thumbnail}`}
+                      src={`https://dlast.herokuapp.com/${el.thumbnail}`}
                       alt=""
                     />
                     <div className="p-5 flex items-center flex-col">

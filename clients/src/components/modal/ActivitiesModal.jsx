@@ -17,7 +17,7 @@ function ActivitiesModal(props) {
             <div className="flex flex-col justify-center items-center mb-4 ">
               <img
                 className="h-60 w-140 object-cover object-center rounded-lg mb-8"
-                src={`http://localhost:5000/${props.thumbnail}`}
+                src={`https://dlast.herokuapp.com/${props.thumbnail}`}
                 alt="photo"
               />
               <div className="w-full flex flex-col flex-wrap text-center rounded-lg">
