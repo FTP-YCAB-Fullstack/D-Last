@@ -11,15 +11,15 @@ function ConditionDetail(props) {
             </div>
             <div className="flex flex-col justify-center items-center mb-4 ">
                 <img className="w-1/3 mb-8 object-cover object-center" 
-                src={`http://localhost:5000/${props.thumbnail}`} alt="photo"/>
+                src={`https://dlast.herokuapp.com/${props.thumbnail}`} alt="photo"/>
                 <div className="w-full flex flex-col flex-wrap  ">
                     <h1 className="text-4xl text-gray-800 font-extrabold text-center mb-6">{props.judul}</h1>
-                    <p className="text-base text-gray-400 font-normal mb-6"> {props.pengertian}</p>
+                    <p className="text-base text-gray-600 font-normal mb-6"> {props.pengertian}</p>
                     <h2 className="text-2xl text-gray-800 text-center mb-6"> Apa aja sih ciri-cirinya? </h2>
-                    <p className="text-gray-400 leading-loose font-normal text-base mb-6 ">{props.ciri}</p>
+                    <p className="text-gray-600 leading-loose font-normal text-base mb-6 ">{props.ciri}</p>
                     <h2 className="text-2xl text-gray-800 text-center mb-6">Penanggulangan gimana?</h2>
-                    <p className="text-gray-400 leading-loose font-normal text-base ">{props.penanggulangan}</p>
-                    <a className="underline italic text-blue-500 mt-10 mb-10" href={props.credit}> <span className="text-gray-300">Credit:</span>{props.credit}</a>
+                    <p className="text-gray-600 leading-loose font-normal text-base ">{props.penanggulangan}</p>
+                    <a className="underline italic text-blue-500 mt-10 mb-10" href={props.credit}> <span className=" font-semibold text-gray-600">Credit :</span>{props.credit}</a>
                 </div>
             </div>
         </div>

@@ -57,7 +57,7 @@ function VolunteerRegistInfo(props) {
                     
                     <div className="top p-2 gap-x-2 flex">
                         <div className="img w-1/4 xs:h-24 h-52 flex justify-center items-center">
-                            <img className="w-full h-full" src={`http://localhost:5000/${props.pas_foto}`} alt="..." />
+                            <img className="w-full h-full" src={`https://dlast.herokuapp.com/${props.pas_foto}`} alt="..." />
                         </div>
                         <div className="info w-1/2 ml-10 ">
                             <h2 className="dark:text-white font-bold text-lg lg:text-2xl my-2 mb-10 ">

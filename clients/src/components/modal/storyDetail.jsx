@@ -11,7 +11,7 @@ function StoryDetail(props) {
                         </div>
                         <div className="flex flex-col justify-center items-center mb-4 ">
                             <img className=" w-1/2 mb-6 object-cover object-center " 
-                            src={`http://localhost:5000/${props.thumbnail}`} alt="photo"/>
+                            src={`https://dlast.herokuapp.com/${props.thumbnail}`} alt="photo"/>
                             <div className="w-full flex flex-col flex-wrap  ">
                                 <p className="text-3xl text-gray-700 font-bold mb-6">{props.judul}</p>
                                 <p className="text-base text-blue-600 font-normal mb-6"> <span className="text-gray-400">Oleh : </span> {props.penulis}</p>
