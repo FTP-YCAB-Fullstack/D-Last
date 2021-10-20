@@ -5,7 +5,7 @@ const route = require("./routes/index");
 const cors = require("cors");
 require("dotenv").config();
 
-const PORT = process.env.SERVER_PORT;
+const PORT = process.env.PORT;
 const error = require("./middlewares/errorHandler");
 
 app.use(express.urlencoded({ extended: true }));

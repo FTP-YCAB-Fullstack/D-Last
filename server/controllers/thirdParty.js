@@ -4,7 +4,7 @@ const axios = require("axios")
 const apiController = {
     getData : async (req,res,next) => {
         try {
-            const url = "https://dekontaminasi.com/api/id/covid19/hospitals"
+            const url = process.env.API_URL
             let dataApi = await axios.get(url)
             dataApi = dataApi.data
 

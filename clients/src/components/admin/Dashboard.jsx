@@ -26,8 +26,8 @@ function Dashboard() {
   };
 
   return (
-    <>
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 py-12">
+    <div classname="container flex flex-col h-screen">
+      <section className="max-w-6xl mx-auto flex-grow px-4 sm:px-6 lg:px-4 py-12">
         <div className="text-center pb-12">
           {token ? (
             <div className="flex justify-between w-full">
@@ -106,7 +106,7 @@ function Dashboard() {
         </div>
         
       </section>
-      <div className="bg-gray-900 b-0">
+      {/* <div className="bg-gray-900 mt-12">
         <footer className="flex flex-wrap items-center justify-between p-3 m-auto">
             <div className="container mx-auto flex flex-col flex-wrap items-center justify-between">
                 <div className="flex mx-auto text-white text-center">
@@ -114,9 +114,9 @@ function Dashboard() {
                 </div>
             </div>
         </footer>
-      </div>
+      </div> */}
       
-    </>
+    </div>
   );
 }
 

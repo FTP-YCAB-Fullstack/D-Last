@@ -17,8 +17,7 @@ function Hospital() {
   const filter = () => {
     return hospitals.filter((el) => {
       if (input === "") {
-        // const dataDef = hospitals.slice(0,5)
-
+        
         return el;
       } else if (el.province.toLowerCase().includes(input.toLowerCase())) {
         return el;
@@ -45,9 +44,9 @@ function Hospital() {
 
         <div className="w-5/6 h-4/6 flex flex-wrap mx-auto justify-center items-center gap-2">
           {filter().length ? (
-            filter().map((el, key) => {
+            filter().slice(0,8).map((el, key) => {
               return (
-                <div className="bg-white p-4 h-96 shadow-md border border-gray-200 rounded-lg max-w-xs m-5 flex flex-col items-center ">
+                <div key={key} className="bg-white p-4 h-96 shadow-md border border-gray-200 rounded-lg max-w-xs m-5 flex flex-col items-center ">
                   <div className="w-full h-36 mb-5">
                     <img
                       src={HospitalImage}

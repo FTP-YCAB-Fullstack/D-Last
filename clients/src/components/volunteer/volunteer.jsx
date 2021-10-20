@@ -4,6 +4,8 @@ import NavBar from "../nav/nav";
 import { useDispatch, useSelector } from "react-redux";
 import getApi from "../../redux/action";
 import ActivitiesModal from "../modal/ActivitiesModal";
+import Swal from 'sweetalert2';
+import Request from "../../axios_instance";
 
 function Volunteer() {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,6 +16,40 @@ function Volunteer() {
   const [openAct, setOpenAct] = useState(false);
 
   const authAs = localStorage.getItem("authAs")
+
+  // activities/:id
+
+  const DeleteVolun = async (id) => {
+      try {
+          const newvolunteer = await Request({
+              method : 'DELETE',
+              url : `volunteers/${id}`
+          })
+          Swal.fire({
+              icon: 'success',
+              title: 'Volunteer Berhasil Dihapus',
+            })
+          dispatch(getApi('approved'))
+      } catch (error) {
+          console.log(error)
+      }  
+  }
+
+  const DeleteAct = async (id) => {
+    try {
+        const newvolunteer = await Request({
+            method : 'DELETE',
+            url : `activities/${id}`
+        })
+        Swal.fire({
+            icon: 'success',
+            title: 'Volunteer Activity Berhasil Dihapus',
+          })
+        dispatch(getApi('activities'))
+    } catch (error) {
+        console.log(error)
+    }  
+}
 
   useEffect(() => {
     dispatch(getApi("approved"));
@@ -33,8 +69,8 @@ function Volunteer() {
     <div >
       <NavBar />
 
-      <div className="volunteer w-full h-screen flex flex-col items-center p-10 px-4 sm:px-6 lg:px-4 py-12">
-        <h1 className="block text-green-900 text-3xl font-bold mb-10">
+      <div className="volunteer w-full h-screen flex flex-col items-center ">
+        <h1 className="block text-green-900 text-3xl mt-10 font-bold mb-10">
           Mari Bergabung Menjadi Volunteer
         </h1>
         <div className="flex w-full justify-center">
@@ -75,6 +111,13 @@ function Volunteer() {
                     {el.domisili}
                   </p>
                 </div>
+                {authAs === 'admin' ? <button
+                  onClick={() => DeleteVolun(el._id)}
+                  className="text-white mt-2 bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center"
+                >
+                  Hapus
+                </button> : null}
+                
               </div>
             );
           })}
@@ -87,7 +130,7 @@ function Volunteer() {
           {activities.map((el, key) => {
             return (
               <>
-                <div className="w-80 bg-gray-200 shadow-lg mb-12 rounded-lg p-8 flex flex-col justify-center items-center">
+                <div key={key} className="w-80 bg-gray-200 shadow-lg mb-12 rounded-lg p-8 flex flex-col justify-center items-center">
                   <div className="mb-8">
                     <img
                       className="object-center object-cover h-32 w-32"
@@ -103,12 +146,22 @@ function Volunteer() {
                       {el.createdAt.slice(0, 10)}
                     </p>
                   </div>
-                  <button
-                    onClick={() => cardData(el)}
-                    className="text-white mt-2 bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center"
-                  >
-                    Read more
-                  </button>
+                  <div className="btn flex gap-x-3">
+                    <button
+                      onClick={() => cardData(el)}
+                      className="text-white mt-2 bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center"
+                    >
+                      Read more
+                    </button>
+                    {authAs === 'admin' ? <button
+                      onClick={() => DeleteAct(el._id)}
+                      className="text-white mt-2 bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center"
+                    >
+                      Hapus
+                    </button> : null}
+                    
+                  </div>
+                  
                 </div>
                 {openAct && (
                   <ActivitiesModal close={setOpenAct} {...dataCard} />

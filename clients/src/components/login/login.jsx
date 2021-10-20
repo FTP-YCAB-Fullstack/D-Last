@@ -19,7 +19,6 @@ function Login() {
                 password
             }
 
-            // let login = await axios.post("http://localhost:5000/login",data)
 
             let login = await Request({
                 method : "POST",
@@ -47,18 +46,12 @@ function Login() {
                 }
             });
 
-            // Swal.fire({
-            //     icon: 'success',
-            //     title: 'Login Success',
-            //   })
-
             if(email === "dlastline003@gmail.com"){
                 history.push("/admin");
             } else {
                 history.push("/");
             }
         } catch (error) {
-            console.log(error.response.data.message)
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
@@ -96,7 +89,7 @@ function Login() {
                         <div className="pb-2 pt-4">
                             <input type="password" placeholder="type your password here" onChange={(e)=>setPassword(e.target.value)} className="block w-full p-4 text-lg rounded-sm placeholder-white bg-gray-900" />
                         </div>
-                        <div className="text-right text-gray-300 lg:text-black hover:underline hover:text-blue-600">
+                        <div className="text-right text-white lg:text-black hover:underline hover:text-blue-600">
                             <Link to="/register">Daftar disini</Link>
                         </div>
                         <div className="px-4 pb-2 pt-4">
