@@ -29,6 +29,7 @@ function Volunteer() {
   };
 
   return (
+    <>
     <div >
       <NavBar />
 
@@ -82,7 +83,7 @@ function Volunteer() {
         <h1 className="block text-green-900 text-3xl font-bold mt-16">
           Kegiatan dan Event
         </h1>
-        <div className="volunteer-box p-4 w-full flex flex-wrap items-center justify-center gap-10 mb-10 mt-5 ">
+        <div className="volunteer-box p-4 w-full r-0 l-0 flex flex-wrap items-center justify-center gap-10 mb-10 mt-5 ">
           {activities.map((el, key) => {
             return (
               <>
@@ -115,9 +116,22 @@ function Volunteer() {
               </>
             );
           })}
+          
         </div>
+        <div className="bg-gray-900 w-full">
+        <footer className="flex flex-wrap items-center justify-between p-3 m-auto">
+            <div className="container mx-auto flex flex-col flex-wrap items-center justify-between">
+                <div className="flex mx-auto text-white text-center">
+                    Copyright D'Last-Line © 2021
+                </div>
+            </div>
+        </footer>
       </div>
+      </div>
+            
     </div>
+    
+    </>
   );
 }
 

@@ -89,12 +89,17 @@ function Condition() {
         </div>
         <div className="w-full flex justify-center">
           <div class="m-6 space-y-3 w-72 bg-green-700 ">
-            {/* <button
-                            class="block rounded-full py-3 px-6 w-full px-6 py-2 text-xs font-medium leading-6 text-center text-white uppercase transition bg-green-700 rounded shadow ripple hover:shadow-lg hover:bg-green-800 focus:outline-none">
-                            Buat Cerita Disini!
-                        </button> */}
           </div>
         </div>
+      </div>
+      <div class="bg-gray-900">
+        <footer class="flex flex-wrap items-center justify-between p-3 m-auto">
+            <div class="container mx-auto flex flex-col flex-wrap items-center justify-between">
+                <div class="flex mx-auto text-white text-center">
+                    Copyright D'Last-Line © 2021
+                </div>
+            </div>
+        </footer>
       </div>
     </div>
   );

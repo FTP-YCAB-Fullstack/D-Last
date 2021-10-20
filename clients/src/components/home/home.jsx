@@ -86,17 +86,15 @@ function Home() {
             </div>
           </div>
           </div>
-           <footer className="relative pt-8 pb-6">
-            <div className="container mx-auto px-4">
-              <div className="flex flex-wrap items-center md:justify-between justify-center">
-                <div className="w-full md:w-6/12 px-4 mx-auto text-center">
-                  <div className="text-sm text-gray-500 font-semibold py-1">
-                    CopyRight by D'Last
-                  </div>
+          <div className="bg-gray-900">
+        <footer className="flex flex-wrap items-center justify-between p-3 m-auto">
+            <div className="container mx-auto flex flex-col flex-wrap items-center justify-between">
+                <div className="flex mx-auto text-white text-center">
+                    Copyright D'Last-Line © 2021
                 </div>
-              </div>
             </div>
-          </footer>
+        </footer>
+      </div>
       </section>
       </section>
     </div>
