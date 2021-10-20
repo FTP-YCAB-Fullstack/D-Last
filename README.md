@@ -1,5 +1,5 @@
 # D'Last Line
-Adalah aplikasi berbasis web yang bertema tentang kesehatan mental dimana didalamnya berisi informasi tentang penyakit, rumah sakit diseluruh Indonesia dan juga dimana user bisa bergabung untuk menjadi volunteer untuk berbagai kegiatan kegiatan sosial
+Adalah aplikasi berbasis web yang bertema tentang kesehatan mental dimana didalamnya berisi informasi tentang penyakit, rumah sakit diseluruh Indonesia dan juga dimana user bisa bergabung untuk menjadi volunteer untuk berbagai kegiatan kegiatan sosial.
 
 # Fitur dari D'Last Line
 - registrasi user dan verifikasi
@@ -36,6 +36,7 @@ Adalah aplikasi berbasis web yang bertema tentang kesehatan mental dimana didala
 - Pada folder Server jalankan `node app.js`
 
 # Demo App
+https://dlast.netlify.app/
 
 # Credits
 
