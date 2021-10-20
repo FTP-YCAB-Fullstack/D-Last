@@ -28,7 +28,7 @@ function Register() {
             Swal.fire({
                 icon: 'success',
                 title: 'Check your email',
-                text: `Untuk login harap verifikasi email anda terlebih dahulu`,
+                text: `Kami sudah mengirim email untuk validasi akun anda`,
               })
             
             history.push('/login')
@@ -43,7 +43,6 @@ function Register() {
     }
 
     return (
-    <body>
         <section className="min-h-screen flex items-stretch text-white ">
             <div className="lg:flex w-1/2 hidden bg-gray-500 bg-no-repeat bg-cover relative items-center" >
                 <div className="absolute bg-black opacity-60 inset-0 z-0"></div>
@@ -57,7 +56,7 @@ function Register() {
                     <div className="absolute bg-black opacity-60 inset-0 z-0"></div>
                 </div>
                 <div className="w-full py-6 z-20">
-                    <h1 className="my-6 text-black text-5xl">
+                    <h1 className="my-6 lg:text-black text-white font-semibold text-5xl">
                         DAFTAR
                     </h1>
                     <form onSubmit={submited} className="sm:w-2/3 w-full px-4 lg:px-0 mx-auto">
@@ -77,7 +76,6 @@ function Register() {
                 </div>
             </div>
         </section>
-    </body>
     )
 }
 

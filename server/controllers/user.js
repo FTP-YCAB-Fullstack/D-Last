@@ -44,6 +44,9 @@ let userController = {
         isVerified : false
       };
 
+      console.log(process.env.SENDER_EMAIL)
+      console.log(process.env.PASSWORD_EMAIL)
+
       if (!nama || !email || !password)
         return next({
           code: 406,
@@ -73,7 +76,7 @@ let userController = {
         subject : 'Dlast Project -verify your email',
         html: `<h2> Hello ${payload.nama}! Thank you for registering on our site </h2>
                 <h4> Please verify your email to continue... </h4>
-                <a href="http://localhost:3000/success/${payload.emailToken}">Verify Your Email</a>
+                <a href="${process.env.FRONT_END}/success/${payload.emailToken}">Verify Your Email</a>
         `
       }
 

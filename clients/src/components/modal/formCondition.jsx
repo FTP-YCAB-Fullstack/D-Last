@@ -68,13 +68,13 @@ const FormCondition = (props) => {
         <>
         <div className="modalBg w-screen h-screen left-0 top-0 fixed flex justify-center items-center">
             <div className="modalcheck h-full items-center justify-center flex flex-col p-4 gap-y-4 bg-white w-full">
-                <form onSubmit={submit} className="w-2/3 h-5/6 bg-blue-300 rounded-lg shadow-lg p-4 overflow-auto" encType="multipart/form-data">
+                <form onSubmit={submit} className="w-2/3 h-5/6 bg-green-800 rounded-lg shadow-lg p-4 overflow-auto" encType="multipart/form-data">
                     <div className="flex flex-wrap -mx-3 mb-6">
                         <div className="w-full px-3">
                         <label className="block uppercase tracking-wide text-white text-xs font-bold mb-2" >
                             Judul
                         </label>
-                        <input onChange={(e) => setJudul(e.target.value)} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-200 focus:border-gray-500" id="nick" type="text"/>
+                        <input onChange={(e) => setJudul(e.target.value)} className="appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-200 focus:border-gray-500" id="nick" type="text"/>
                         </div>
                     </div>
 
@@ -83,7 +83,7 @@ const FormCondition = (props) => {
                         <label className="block uppercase tracking-wide text-white text-xs font-bold mb-2" >
                             Pengertian
                         </label>
-                        <textarea onChange={(e) => setPengertian(e.target.value)} className=" no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-200 focus:border-gray-500 h-48 resize-none"></textarea>
+                        <textarea onChange={(e) => setPengertian(e.target.value)} className=" no-resize appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-200 focus:border-gray-500 h-48 resize-none"></textarea>
 
                         </div>
                     </div>
@@ -93,7 +93,7 @@ const FormCondition = (props) => {
                         <label  className="block uppercase tracking-wide text-white text-xs font-bold mb-2" >
                             Ciri - Ciri
                         </label>
-                        <textarea onChange={(e) => setCiri(e.target.value)} className=" no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-200 focus:border-gray-500 h-48 resize-none"></textarea>
+                        <textarea onChange={(e) => setCiri(e.target.value)} className=" no-resize appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-200 focus:border-gray-500 h-48 resize-none"></textarea>
 
                         </div>
                     </div>
@@ -103,7 +103,7 @@ const FormCondition = (props) => {
                         <label  className="block uppercase tracking-wide text-white text-xs font-bold mb-2" >
                             Cara mengatasi
                         </label>
-                        <textarea onChange={(e) => setPenanggulangan(e.target.value)} className=" no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-200 focus:border-gray-500 h-48 resize-none"></textarea>
+                        <textarea onChange={(e) => setPenanggulangan(e.target.value)} className=" no-resize appearance-none block w-full bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-200 focus:border-gray-500 h-48 resize-none"></textarea>
 
                         </div>
                     </div>
@@ -113,7 +113,7 @@ const FormCondition = (props) => {
                         <label className="block uppercase tracking-wide text-white text-xs font-bold mb-2" >
                             Credit
                         </label>
-                        <input onChange={(e) => setCredit(e.target.value)} className="appearance-none block w-1/2 bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-200 focus:border-gray-500" id="nick" type="text"/>
+                        <input onChange={(e) => setCredit(e.target.value)} className="appearance-none block w-1/2 bg-white text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-200 focus:border-gray-500" id="nick" type="text"/>
                         </div>
                     </div>
 

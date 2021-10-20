@@ -41,7 +41,7 @@ function Home() {
               <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                 <div className="px-4 py-5 flex-auto">
                   <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-red-400">
-                    <i className="fas fa-award"></i>
+                  <i className="fas fa-info"></i> 
                   </div>
                   <h6 className="text-xl font-semibold">Kita bisa ngapain aja disini?</h6>
                   <p className="mt-2 mb-4 text-blueGray-200">
@@ -56,7 +56,7 @@ function Home() {
               <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                 <div className="px-4 py-5 flex-auto">
                   <div className="text-white bg-blue-400 text-md p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-lightBlue-400">
-                    <i class="fas fa-question"></i>
+                    <i className="fas fa-question"></i>
                   </div>
                   <h6 className="text-xl font-semibold">D'Last-Line Itu Apa?</h6>
                   <p className="mt-2 mb-4 text-blueGray-200">
@@ -72,7 +72,7 @@ function Home() {
               <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
                 <div className="px-4 py-5 flex-auto">
                   <div className="text-white bg-green-400 p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-emerald-400">
-                    <i className="fas fa-fingerprint"></i>
+                  <i className="fas fa-hands-helping"></i> 
                   </div>
                   <h6 className="text-xl font-semibold">Aku bisa ikut kontribusi ga?</h6>
                   <p className="mt-2 mb-4 text-blueGray-200">
