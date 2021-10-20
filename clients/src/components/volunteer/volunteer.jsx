@@ -99,7 +99,7 @@ function Volunteer() {
                 <div className="mb-8">
                   <img
                     className="object-center object-cover rounded-full h-32 w-32"
-                    src={`http://localhost:5000/${el.pas_foto}`}
+                    src={`https://dlast.herokuapp.com/${el.pas_foto}`}
                     alt="photo"
                   />
                 </div>
@@ -134,7 +134,7 @@ function Volunteer() {
                   <div className="mb-8">
                     <img
                       className="object-center object-cover h-32 w-32"
-                      src={`http://localhost:5000/${el.thumbnail}`}
+                      src={`https://dlast.herokuapp.com/${el.thumbnail}`}
                       alt="photo"
                     />
                   </div>

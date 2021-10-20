@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const Request = axios.create({
-    baseURL : "http://localhost:5000/",
+    baseURL : "https://dlast.herokuapp.com/",
 })
 
 export default Request;
