@@ -24,7 +24,7 @@ function App() {
       <Switch>
         <OnlyPublic path="/login" exact component={LoginPage}/>
         <OnlyPublic path="/register" exact component={RegisterPage}/>
-        <OnlyPublic path="/:token" exact component={VerifPage}/>
+        {/* <OnlyPublic path="/success/:token" exact component={VerifPage}/> */}
         <Private path='/cerita' exact component={CeritaPage}/>
         <Route path='/rumah-sakit' exact component={HospitalPage}/>
         <Route path='/health-condition' exact component={ConditionPage}/>

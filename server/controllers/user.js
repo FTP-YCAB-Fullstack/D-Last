@@ -76,7 +76,7 @@ let userController = {
         subject : 'Dlast Project -verify your email',
         html: `<h2> Hello ${payload.nama}! Thank you for registering on our site </h2>
                 <h4> Please verify your email to continue... </h4>
-                <a href="dlast.netlify.app/${payload.emailToken}">Verify Your Email</a>
+                <a href="http://${req.headers.host}/users/verify-email?token=${payload.emailToken}">Verify Your Email</a>
         `
       }
 
@@ -108,8 +108,7 @@ let userController = {
           user.isVerified = true
           await user.save()
           res.status(200).json({
-              message : `User is verified`,
-              data : user
+              message : `Validasi Email Sukses, Silahkan Login Kembali`
           })
       }
     } catch (error) {
