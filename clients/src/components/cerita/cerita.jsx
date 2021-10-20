@@ -17,7 +17,6 @@ function Cerita() {
 
   useEffect(() => {
     dispatch(getApi("story"));
-    console.log(stories);
   }, []);
 
   const deleteStory = async (id) => {
